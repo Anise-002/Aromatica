@@ -8,6 +8,7 @@ const scenInfo = [
         type: STICKY,
         heightNum : 5,
         scrollHeight : 0,
+        imageCount : 213,
         obj : {
             container :document.querySelector('#section-0'),
             messageA: document.querySelector('#section-0 .a'),
@@ -15,25 +16,32 @@ const scenInfo = [
             messageC: document.querySelector('#section-0 .c'),
             messageD: document.querySelector('#section-0 .d'),
             canvas : document.querySelector('#video-canvas-0'),
-            // context : document.querySelector('#video-canvas-0').getContext('2d'),
+            context : document.querySelector('#video-canvas-0').getContext('2d'),   
             videoImg : []
         },
         value :{
+            //cavas
+            videoImgCount : 213,
+            imageSequence : [1, 212],
+            canvas_opacity : [1, 0,{start : 0.97, end : 1}],
             //a
-            a_opacity_in : [0,1,{start : 0.2, end : 0.3}],
-            a_translateY_in : [100,0,{start : 0.2, end : 0.3}],
-            a_opacity_out : [1,0,{start : 0.3, end : 0.4}],
-            a_translateY_out : [0,-100,{start : 0.3, end : 0.4}],
+            a_opacity_in : [0,1,{start : 0.1, end : 0.2}],
+            a_translateX_in : [-100,0,{start : 0.1, end : 0.2}],
+            a_opacity_out : [1,0,{start : 0.2, end : 0.3}],
+            a_translateY_out : [0,-100,{start : 0.2, end : 0.3}],
             //b
-            b_opacity_in : [0,1,{start : 0.4, end : 0.5}],
-            b_opacity_out : [1,0,{start : 0.5, end : 0.6}],
+            b_opacity_in : [0,1,{start : 0.45, end : 0.55}],
+            b_translateY_in : [-100,0,{start : 0.45, end : 0.55}],
+            b_opacity_out : [1,0,{start : 0.55, end : 0.7}],
+            b_translateY_out : [0,100,{start : 0.55, end : 0.7}],
             //c
-            c_opacity_in : [0,1,{start : 0.6, end : 0.7}],
-            c_opacity_out : [1,0,{start : 0.7, end : 0.8}],
+            c_opacity_in : [0,1,{start : 0.7, end : 0.85}],
+            c_translateY_in : [100,0,{start : 0.7, end : 0.85}],
+            c_opacity_out : [1,0,{start : 0.85, end : 0.88}],
+            c_translateY_out : [0,-100,{start : 0.85, end : 0.88}],
             //d
-            d_opacity_in : [0,1,{start : 0.8, end : 0.9}],
-            d_opacity_out : [1,0,{start : 0.9, end : 1}],
-
+            d_opacity_in : [0,1,{start : 0.88, end : 0.93}],
+            d_translateY_in : [-100,0,{start : 0.88, end : 0.93}]
 
         }
         

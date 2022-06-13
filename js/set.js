@@ -2,6 +2,21 @@
     let currentScene = 0;
     let prevScrollHeight = 0;
 
+    //이미지시퀀스
+    function setCanvasImage(){
+        let imgElem;
+
+        for(let i = 1; i<scenInfo[0].value.videoImgCount + 1; i++){
+            imgElem = new Image();
+            if(i < 10) i =`00${i}`;
+            if(i >= 10 && i < 100) i =`0${i}`;
+            imgElem.src = `../video/1/${i}.jpg`;
+            scenInfo[0].obj.videoImg.push(imgElem);
+        }
+
+    }
+    
+
     //현재 창의 섹션 구분하기 위한 함수
     function setCurrentNum(){
         prevScrollHeight = 0;
@@ -45,9 +60,17 @@
         document.body.setAttribute('id', `show-section-${currentScene}`);
 
         playAnimation();
+
+        //canvas size 
+        const heightRatio = window.innerHeight/ 1080;
+        scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
     }
 
-    window.addEventListener('load',setLayout);
+    setCanvasImage();
+    window.addEventListener('load',()=>{
+        setLayout();
+        scenInfo[0].obj.context.drawImage(scenInfo[0].obj.videoImg[0], 0, 0);
+    });
     window.addEventListener('resize', setLayout);
     window.addEventListener('scroll',()=>{
         YOffset = window.pageYOffset;
