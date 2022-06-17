@@ -193,7 +193,7 @@ nav{
     position: relative;
     text-align: center;
     z-index: 1;
-    padding-top: 20vh;
+    /* padding-top: 20vh; */
 }
 #section-2 .title-text .sub-title{
     display: inline-block;
@@ -292,9 +292,9 @@ nav{
 #section-2 .left-text span.vertical{
     position: absolute;
     transform: rotate(-45deg) translate(-50%,0);
+    right: 0;
     left: 14vw;
     top: -5vh;
-
 }
 #section-2 .right-text{
     position: absolute;
@@ -335,7 +335,7 @@ nav{
     padding: 0 5vw;
 }
 
-#section-2 .content-text{
+#section-2 .bottom-content-text{
     padding: 0 8vw;
     font-size: 2vw;
 }

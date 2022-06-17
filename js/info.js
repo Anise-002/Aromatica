@@ -24,7 +24,7 @@ const scenInfo = [
             //cavas
             videoImgCount : 213,
             imageSequence : [1, 212],
-            canvas_opacity : [1, 0,{start : 0.97, end : 1}],
+            canvas_opacity : [1, 0,{start : 0.95, end : 1}],
             //a
             a_opacity_in : [0,1,{start : 0.1, end : 0.2}],
             a_translateX_in : [-100,0,{start : 0.1, end : 0.2}],
@@ -60,6 +60,8 @@ const scenInfo = [
             button : document.querySelector('#section-1 .title-text .button')
         },  
         value : {
+            //container
+            container_opacity_out : [1 , 0, {start : 0.8, end : 0.9}],
             //titleCon
             title_opacity_in : [0, 1, {start : 0.1, end : 0.3}],
             title_translateY_in : [-150, 0, {start : 0.1, end : 0.3}],
@@ -78,7 +80,42 @@ const scenInfo = [
         scrollHeight : 0,    
         obj : {
             container :document.querySelector('#section-2'),
-        },        
+            //leftContent
+            leftContent : document.querySelector("#section-2 .left-text p"),
+            leftHorizon : document.querySelector("#section-2 .left-text .horizon"),
+            leftVertical : document.querySelector("#section-2 .left-text .vertical"),
+            //rightContent
+            rightContainer : document.querySelector('#section-2 .right-text'),
+            rightContent : document.querySelector("#section-2 .right-text p"),
+            rightHorizon : document.querySelector("#section-2 .right-text .horizon"),
+            rightVertical : document.querySelector("#section-2 .right-text .vertical"),
+            //concept_text
+            conceptText : document.querySelector('#section-2 .concept-text-container'),
+            //bottomContent
+            bottomContent : document.querySelector('#section-2 .bottom-content-text')
+
+        },
+        value : {
+            //leftContent
+            leftContent_opacity_in : [0, 1, {start : 0.12, end : 0.17}],
+            leftContent_transformX_in : [-50, 0, {start : 0.12, end : 0.17}],
+            left_horizon_line : [0, 15,{start : 0.05, end : 0.07}],
+            left_vertical_line : [0, 12,{start : 0.07, end : 0.12}],
+
+            //rightContent
+            rightContent_opacity_in : [0, 1, {start : 0.25, end : 0.3}],
+            leftContent_transformY_in : [50, 0, {start : 0.25, end : 0.3}],
+            right_horizon_line : [0, 14.7,{start : 0.2, end : 0.23}],
+            right_vertical_line : [0, 8,{start : 0.23, end : 0.26}],
+
+            //conceptText
+            conceptText_opacity_in : [0, 1, {start : 0.3, end : 0.4}],
+            conceptText_translateY_in : [50, 0, {start : 0.3, end : 0.4}],
+            
+             //bottomContent
+            bottomContent_opacity_in : [0, 1, {start : 0.4, end : 0.45}],
+            bottomContent_translateY_in : [50, 0, {start : 0.35, end : 0.45}],
+        } 
     },
     {
         //3

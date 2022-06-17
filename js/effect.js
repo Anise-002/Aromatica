@@ -69,7 +69,7 @@ function playAnimation(){
 
             break;
         case 1 :
-            
+            obj.container.style.opacity = calcValue(value.container_opacity_out,currentYOffset);
           //titleCon
             obj.title.style.opacity = calcValue(value.title_opacity_in, currentYOffset); 
             obj.subTitle.style.opacity = calcValue(value.subTitle_opacity_in, currentYOffset); 
@@ -79,6 +79,36 @@ function playAnimation(){
             obj.subTitle.style.transform = `translate3d(0, ${calcValue(value.subTitle_translateY_in, currentYOffset)}%,0)`; 
             obj.button.style.transform = `translate3d(-50%, ${calcValue(value.button_translateY_in, currentYOffset)}%,0)`; 
 
+            break;
+        case 2 :
+            
+            //leftContent
+            obj.leftContent.style.opacity = calcValue(value.leftContent_opacity_in, currentYOffset);
+            obj.leftContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformX_in, currentYOffset)}%,0, 0)`;
+            obj.leftHorizon.style.width = `${calcValue(value.left_horizon_line, currentYOffset)}vw`;
+            obj.leftVertical.style.width = `${calcValue(value.left_vertical_line, currentYOffset)}vw`;
+
+            if(scrollRatio > 0.2){
+                obj.rightContainer.style.display = "block";
+
+                //rightContent
+                obj.rightContent.style.opacity = calcValue(value.rightContent_opacity_in, currentYOffset);
+                obj.rightContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformY_in, currentYOffset)}%,0, 0)`;
+                obj.rightHorizon.style.width = `${calcValue(value.right_horizon_line, currentYOffset)}vw`;
+                obj.rightVertical.style.width = `${calcValue(value.right_vertical_line, currentYOffset)}vw`;
+            }else{
+                obj.rightContainer.style.display = "none";
+            }
+
+            //conceptText
+            obj.conceptText.style.opacity = calcValue(value.conceptText_opacity_in,currentYOffset);
+            obj.conceptText.style.transform = `translate3d(0, ${calcValue(value.conceptText_translateY_in, currentYOffset)}%, 0)`;
+            
+            //bottomContent
+            obj.bottomContent.style.opacity = calcValue(value.bottomContent_opacity_in,currentYOffset);
+            obj.bottomContent.style.transform = `translate3d(0, ${calcValue(value.bottomContent_translateY_in, currentYOffset)}%, 0)`;
+
+            
 
 
     }
