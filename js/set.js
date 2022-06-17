@@ -1,6 +1,7 @@
     let YOffset = 0;
     let currentScene = 0;
     let prevScrollHeight = 0;
+    let enterNewSection;
 
     //이미지시퀀스
     function setCanvasImage(){
@@ -19,32 +20,41 @@
 
     //현재 창의 섹션 구분하기 위한 함수
     function setCurrentNum(){
+        enterNewSection = false;
         prevScrollHeight = 0;
+
         for(let i = 0; i<currentScene; i++){
             prevScrollHeight += scenInfo[i].scrollHeight;            
         }
         if(YOffset > prevScrollHeight + scenInfo[currentScene].scrollHeight ){
+            enterNewSection = true;
             currentScene++;
             document.body.setAttribute('id', `show-section-${currentScene}`);
         }
         if(YOffset < prevScrollHeight){
+            enterNewSection = true;
             if(currentScene === 0) return;
             currentScene--;
             document.body.setAttribute('id', `show-section-${currentScene}`);
         }
+
+       if(enterNewSection) return;
+       playAnimation();
+
     }
 
     //초기세팅 값 및 로딩 세팅 값
     function setLayout(){
         for(let i = 0; i <scenInfo.length; i++){
-            // if(scenInfo[i].type === STICKY){
-            //     scenInfo[i].scrollHeight = scenInfo[i].heightNum * window.innerHeight;
-            // }
-            // if(scenInfo[i].type === NORMAL){
-            //     scenInfo[i].scrollHeight = scenInfo[i].obj.container.innerHeight;
-            //     console.log(scenInfo[i].scrollHeight);
-            // }
-            scenInfo[i].scrollHeight = scenInfo[i].heightNum * window.innerHeight;        
+            if(scenInfo[i].type === STICKY){
+                 scenInfo[i].scrollHeight = scenInfo[i].heightNum * window.innerHeight;
+            }
+            if(scenInfo[i].type === FULLHEIGHT ){
+               scenInfo[i].scrollHeight = scenInfo[i].obj.container.offsetHeight + innerHeight;
+            }
+            if(scenInfo[i].type === NORMAL){
+                scenInfo[i].scrollHeight = scenInfo[i].obj.container.offsetHeight;
+             }
             scenInfo[i].obj.container.style.height = `${scenInfo[i].scrollHeight}px`;
         }
 
@@ -74,7 +84,7 @@
     window.addEventListener('resize', setLayout);
     window.addEventListener('scroll',()=>{
         YOffset = window.pageYOffset;
-        setCurrentNum();
         playAnimation();
+        setCurrentNum();
 
     })

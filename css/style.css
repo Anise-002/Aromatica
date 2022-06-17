@@ -8,7 +8,7 @@ body {
 	overflow-x: hidden;
 	color: rgb(29, 29, 31);
 	letter-spacing: -0.05em;
-	background: white;
+	background: #F3F0EB;
 }
 
 nav{
@@ -16,12 +16,11 @@ nav{
     top: 0;
     left: 0;
     width: 100vw;
-    max-width: 1000px;
-    background-color: #F3F0EB;
     display: flex;
     justify-content: center;
     align-items: center;    
-    z-index: 10;
+	background: #F3F0EB;
+    z-index: 100;
 }
 #top-nav{
     height: 50px;
@@ -61,7 +60,7 @@ nav{
     height: 100%;
 }
 #bottom-nav .logo img{
-    width: 47vw;
+    width: 35vw;
 }
 #bottom-nav .menu-icon{
     display: flex;
@@ -78,10 +77,11 @@ nav{
     width: 100%;
 }
 
+/*----------sections---------------------*/
+
 .scroll-section{
     width: 100vw;
     padding-top: 50vh;
-    /* border: 1px solid red; */
 }
 .sticky-elem{
     display: none;
@@ -96,17 +96,22 @@ nav{
 #show-section-3 #section-3 .sticky-elem{
     display: block;
 }
-
+.scroll-effect-end .sticky-elem {
+	/* 스크롤 효과가 모두 끝나고, 아래 일반 콘텐츠 영역에서는 sticky-elem들을 모두 안보이도록 */
+	display: none !important;
+}
 .main-text{
     font-family: 'Black Han Sans', sans-serif;
-    font-size: 3.5rem;
+    font-size: 12vw;
     text-align: center;
     color: aliceblue;
 }
+/*----------section-0*/
  #section-0 h1{
     position: relative;
     text-shadow: 1px 1px black;
     z-index: 5;
+    font-size: 14vw;
 } 
 
 #section-0 .sticky-canvas{
@@ -127,7 +132,7 @@ nav{
     padding: 0 2vw;
 }
 #section-0 .a{
-    font-size: 4rem;
+    font-size: 14vw;
     top: 53vh;
     text-align: right;
 }
@@ -142,6 +147,195 @@ nav{
 }
 #section-0 .d{
     padding: 0 5vw;
-    font-size: 2.5rem;
+    font-size: 8vw;
     top: 15vh;
+}
+
+.title-text{
+    text-align: center;
+    font-size: 6vw;
+    color: black;
+}
+/* ------------- #section-1 */
+#section-1{
+    height: 100vh;
+    padding-top: 30vh;
+}
+#section-1 .title-text{
+    position: relative;
+    margin-top: 40vh;
+}
+#section-1 .sticky-elem.a{
+    top: 30vh;
+}
+#section-1 .sticky-elem.b{
+    top:37vh;
+}
+#section-1 .sticky-elem.c{
+    top:48vh;
+}
+#section-1 .button{
+    width: 50vw;
+    left: 50%;
+    border: 1px solid black;
+    padding: 1vh 5vw;
+    font-size: 3vw;
+    margin-top: 3vh;
+    transition: hover 0.3s;
+}
+#section-1 .button:hover{
+    color: white;
+    background-color: black;
+}
+
+/* ------------- #section-2 */
+#section-2{
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    padding-top: 20vh;
+}
+#section-2 .title-text .sub-title{
+    display: inline-block;
+    font-size: 2vw;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+    margin-bottom: 10px;
+}
+#section-2 .main-img-container{
+    position: relative;
+}
+#section-2 .main-img{
+    display: inline-block;
+    width: 35vw;
+    margin-top: 5vh;
+}
+#section-2 .lavender-left{
+    position: absolute;
+    width: 35vw;
+    height: 35vw;
+    bottom: 1vh;
+    left: 11vw;
+}
+
+#section-2 .lavender-left img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#section-2 .lavender-left .circle{
+    width: 28vw;
+    height: 28vw;
+    top: 3vh;
+    left: 3vw;
+    animation: circleAnimation 20s infinite linear;
+}
+#section-2 .sweet-right{
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    top: 6vh;
+    right: 11vw;
+    z-index: -1;
+}
+#section-2 .sweet-right img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#section-2 .sweet-right .circle{
+    width: 28vw;
+    height: 28vw;
+    top: 2vh;
+    left: 5vw;
+    animation: circleAnimation 20s infinite linear reverse;
+}
+@keyframes circleAnimation {
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+#section-2 .sub-text p{
+    width: 25vw;
+    font-size: 0.5vw;
+}
+#section-2 .sub-text span.horizon{
+    display: block;
+    width: 15vw;
+    height: 1px;
+    background-color: black;
+}
+#section-2 .sub-text span.vertical{
+    display: block;
+    width: 12vw;
+    height: 1px;
+    background-color: black;
+}
+#section-2 .left-text{
+    position: absolute;
+    top: 20vh;
+    left: 5vw;
+}
+#section-2 .left-text p{
+    margin-top: 1vw;
+    text-align: right;
+}
+#section-2 .left-text span.horizon{
+    position: absolute;
+    top: -5vh;
+    right: -10vw;
+}
+#section-2 .left-text span.vertical{
+    position: absolute;
+    transform: rotate(-45deg) translate(-50%,0);
+    left: 14vw;
+    top: -5vh;
+
+}
+#section-2 .right-text{
+    position: absolute;
+    bottom: 2vh;
+    right: 5vw;
+}
+#section-2 .right-text p{
+    margin-top: 1vw;
+    text-align: left;
+}
+#section-2 .right-text span.horizon{
+    position: absolute;
+    top: -3vh;
+    left: -8vw;
+}
+#section-2 .right-text span.vertical{
+    position: absolute;
+    width: 8vw;
+    transform: rotate(-135deg) translate(-50%,0);
+    right: 14.3vw;
+    top: -3vh;
+
+}
+#section-2 .concept-text-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    margin: 2vh 0 0 0;
+}
+#section-2 .concept-text-container span{
+    display: block;
+    width: 1px;
+    height: 20%;
+    background-color: black;
+}
+#section-2 .concept-text-container p{
+    padding: 0 5vw;
+}
+
+#section-2 .content-text{
+    padding: 0 8vw;
+    font-size: 2vw;
 }

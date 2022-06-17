@@ -22,6 +22,8 @@ function calcValue(value, currentYOffset){
     }
     return rv;
 }
+
+
 function playAnimation(){
     const current = scenInfo[currentScene]
     const obj = current.obj;
@@ -34,7 +36,7 @@ function playAnimation(){
         case 0 :
             //canvas
             let sequence = Math.round(calcValue(value.imageSequence, currentYOffset));
-            if(sequence < 0) return; 
+            if(sequence < 0 || sequence > 212) return; 
             obj.context.drawImage(obj.videoImg[sequence], 0, 0);
             obj.canvas.style.opacity = calcValue(value.canvas_opacity, currentYOffset);
             //messageA
@@ -65,6 +67,19 @@ function playAnimation(){
                 obj.messageD.style.opacity = calcValue(value.d_opacity_in, currentYOffset);
                 obj.messageD.style.transform = `translate3d(0, ${calcValue(value.d_translateY_in, currentYOffset)}%, 0)`;
 
+            break;
         case 1 :
+            
+          //titleCon
+            obj.title.style.opacity = calcValue(value.title_opacity_in, currentYOffset); 
+            obj.subTitle.style.opacity = calcValue(value.subTitle_opacity_in, currentYOffset); 
+            obj.button.style.opacity = calcValue(value.button_opacity_in, currentYOffset); 
+
+            obj.title.style.transform = `translate3d(0, ${calcValue(value.title_translateY_in, currentYOffset)}%,0)`; 
+            obj.subTitle.style.transform = `translate3d(0, ${calcValue(value.subTitle_translateY_in, currentYOffset)}%,0)`; 
+            obj.button.style.transform = `translate3d(-50%, ${calcValue(value.button_translateY_in, currentYOffset)}%,0)`; 
+
+
+
     }
 }

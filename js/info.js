@@ -1,6 +1,7 @@
 
 const STICKY = 'sticky';
 const NORMAL = 'normal';
+const FULLHEIGHT = "fullheight";
 
 const scenInfo = [
     {
@@ -48,12 +49,27 @@ const scenInfo = [
     },
     {
         //1
-        type: NORMAL,
+        type: FULLHEIGHT,
         heightNum : 3,
         scrollHeight : 0,
         obj : {
             container :document.querySelector('#section-1'),
-        },        
+            titleCon : document.querySelector('#section-1 .title-text'),
+            title : document.querySelector('#section-1 .title-text h2'),
+            subTitle : document.querySelector('#section-1 .title-text p'),
+            button : document.querySelector('#section-1 .title-text .button')
+        },  
+        value : {
+            //titleCon
+            title_opacity_in : [0, 1, {start : 0.1, end : 0.3}],
+            title_translateY_in : [-150, 0, {start : 0.1, end : 0.3}],
+            //subTitle
+            subTitle_opacity_in : [0, 1, {start : 0.2, end : 0.4}],
+            subTitle_translateY_in : [-150, 0, {start : 0.2, end : 0.4}],
+            //button
+            button_opacity_in : [0, 1, {start : 0.4, end : 0.6}],
+            button_translateY_in : [-150, 0, {start : 0.4, end : 0.6}],
+        }
     },
     {
         //2
@@ -71,6 +87,7 @@ const scenInfo = [
         scrollHeight : 0,   
         obj : {
             container :document.querySelector('#section-3'),
+
         },         
     },
     {
@@ -80,6 +97,7 @@ const scenInfo = [
         scrollHeight : 0,
         obj : {
             container :document.querySelector('#section-4'),
+
         },         
     },
     {
@@ -89,6 +107,7 @@ const scenInfo = [
         scrollHeight : 0,  
         obj : {
             container :document.querySelector('#section-5'),
+
         },          
     },
     {
@@ -116,6 +135,7 @@ const scenInfo = [
         scrollHeight : 0,   
         obj : {
             container :document.querySelector('#section-8'),
+
         },         
     },
     {
