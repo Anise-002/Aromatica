@@ -80,6 +80,7 @@ const scenInfo = [
         scrollHeight : 0,    
         obj : {
             container :document.querySelector('#section-2'),
+            ContContainer : document.querySelector('#section-2 .container1'),
             //leftContent
             leftContent : document.querySelector("#section-2 .left-text p"),
             leftHorizon : document.querySelector("#section-2 .left-text .horizon"),
@@ -96,6 +97,9 @@ const scenInfo = [
 
         },
         value : {
+            //container
+            container_translateY : [ ],
+            sectionPaddingTop : 50,
             //leftContent
             leftContent_opacity_in : [0, 1, {start : 0.12, end : 0.17}],
             leftContent_transformX_in : [-50, 0, {start : 0.12, end : 0.17}],
@@ -113,8 +117,8 @@ const scenInfo = [
             conceptText_translateY_in : [50, 0, {start : 0.3, end : 0.4}],
             
              //bottomContent
-            bottomContent_opacity_in : [0, 1, {start : 0.4, end : 0.45}],
-            bottomContent_translateY_in : [50, 0, {start : 0.35, end : 0.45}],
+            bottomContent_opacity_in : [0, 1, {start : 0.45, end : 0.5}],
+            bottomContent_translateY_in : [50, 0, {start : 0.45, end : 0.5}],
         } 
     },
     {

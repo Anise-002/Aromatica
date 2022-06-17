@@ -81,7 +81,6 @@ function playAnimation(){
 
             break;
         case 2 :
-            
             //leftContent
             obj.leftContent.style.opacity = calcValue(value.leftContent_opacity_in, currentYOffset);
             obj.leftContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformX_in, currentYOffset)}%,0, 0)`;
@@ -90,15 +89,50 @@ function playAnimation(){
 
             if(scrollRatio > 0.2){
                 obj.rightContainer.style.display = "block";
-
+                
                 //rightContent
                 obj.rightContent.style.opacity = calcValue(value.rightContent_opacity_in, currentYOffset);
                 obj.rightContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformY_in, currentYOffset)}%,0, 0)`;
                 obj.rightHorizon.style.width = `${calcValue(value.right_horizon_line, currentYOffset)}vw`;
                 obj.rightVertical.style.width = `${calcValue(value.right_vertical_line, currentYOffset)}vw`;
-            }else{
+            }else{                
                 obj.rightContainer.style.display = "none";
             }
+
+            const fixedPoint = value.sectionPaddingTop - (value.rightContent_opacity_in[2].end*value.sectionPaddingTop);
+            if(scrollRatio > value.rightContent_opacity_in[2].end && scrollRatio <= 0.8){                
+                obj.container.classList.add("fixed");
+                obj.container.style.top = `-${fixedPoint}vh`;
+            }else{
+                console.log(scrollRatio);
+                if(scrollRatio > 0.8){
+                    const startPoint = value.sectionPaddingTop - (value.bottomContent_opacity_in[2].end * value.sectionPaddingTop )
+                    obj.container.classList.remove("fixed");
+                    obj.container.style.top = `${startPoint + fixedPoint}vh`;
+                    console.log(startPoint + fixedPoint);
+                    // obj.container.style.transform = `translateY : -${fixedPoint}vh`;
+                }else{
+                    obj.container.classList.remove("fixed");
+                    obj.container.style.top =`0`;
+                }
+                
+            }
+
+            
+
+            
+            container_translateY = [0,100 , {start : 0.8, end: 1}];
+            obj.container.style.transform = `translate3d(0, ${calcValue(value.container_translateY,currentYOffset)}vh,0)`;
+            
+            // if(scrollRatio > 0.8 && scrollRatio <1){
+            //     obj.container.classList.remove("fixed");
+            //     container_translateY = [0,100 , {start : 0.8, end: 1}];
+            //     obj.container.style.transform = `translate3d(0, ${calcValue(value.container_translateY,currentYOffset)}vh,0)`;
+            // }
+
+            // obj.container.classList.remove("fixed");
+            // obj.container.style.top = `-${fixedPoint}vh`;
+
 
             //conceptText
             obj.conceptText.style.opacity = calcValue(value.conceptText_opacity_in,currentYOffset);

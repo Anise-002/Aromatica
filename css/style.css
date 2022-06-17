@@ -82,6 +82,7 @@ nav{
 .scroll-section{
     width: 100vw;
     padding-top: 50vh;
+    overflow: hidden;
 }
 .sticky-elem{
     display: none;
@@ -194,6 +195,9 @@ nav{
     text-align: center;
     z-index: 1;
     /* padding-top: 20vh; */
+}
+#section-2.fixed{
+    position: fixed;
 }
 #section-2 .title-text .sub-title{
     display: inline-block;
