@@ -81,7 +81,10 @@
         setLayout();
         scenInfo[0].obj.context.drawImage(scenInfo[0].obj.videoImg[0], 0, 0);
     });
-    window.addEventListener('resize', setLayout);
+    window.addEventListener('resize', ()=>{
+        setLayout();
+        playAnimation();
+    });
     window.addEventListener('scroll',()=>{
         YOffset = window.pageYOffset;
         playAnimation();

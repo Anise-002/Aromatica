@@ -75,8 +75,8 @@ const scenInfo = [
     },
     {
         //2
-        type: NORMAL,
-        heightNum : 2,
+        type: STICKY,
+        heightNum :3,
         scrollHeight : 0,    
         obj : {
             container :document.querySelector('#section-2'),
@@ -100,6 +100,7 @@ const scenInfo = [
             //container
             container_translateY : [ ],
             sectionPaddingTop : 50,
+            paddingFixedTop : 10,
             //leftContent
             leftContent_opacity_in : [0, 1, {start : 0.12, end : 0.17}],
             leftContent_transformX_in : [-50, 0, {start : 0.12, end : 0.17}],
@@ -117,8 +118,8 @@ const scenInfo = [
             conceptText_translateY_in : [50, 0, {start : 0.3, end : 0.4}],
             
              //bottomContent
-            bottomContent_opacity_in : [0, 1, {start : 0.45, end : 0.5}],
-            bottomContent_translateY_in : [50, 0, {start : 0.45, end : 0.5}],
+            bottomContent_opacity_in : [0, 1, {start : 0.5, end : 0.6}],
+            bottomContent_translateY_in : [50, 0, {start : 0.5, end : 0.6}],
         } 
     },
     {

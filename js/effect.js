@@ -81,6 +81,32 @@ function playAnimation(){
 
             break;
         case 2 :
+
+            const fixedPadding = (value.sectionPaddingTop- value.paddingFixedTop); 
+            //fixed될때 section의 padding-top의 값(50vh - 10vh);
+            const fixedRatio = (innerHeight / fixedPadding) / scrollHeight;
+            //fixed될때의 시작점 : 40vh의 px값을 구한 후 sectionheight의 비율을 구함
+            const paddingPx = innerHeight / value.paddingFixedTop; 
+            //fixed할때 padding-top의 px값
+            const moveStart = paddingPx + (value.bottomContent_opacity_in[2].end * scrollHeight);
+            //fixed할떄의 paddin의 값 + 지금까지 스크롤한 px값
+           
+            const FIXED = "fixed";
+
+            console.log(fixedRatio);
+            if(scrollRatio > fixedRatio  && scrollRatio < value.bottomContent_opacity_in[2].end){
+                obj.ContContainer.classList.add(FIXED);
+                obj.ContContainer.style.top = `${value.paddingFixedTop}vh`;
+            }else if(scrollRatio >= value.bottomContent_opacity_in[2].end && scrollRatio <1){
+                obj.ContContainer.classList.remove(FIXED);
+                obj.ContContainer.style.top = `${moveStart}px`;
+            }else{
+                obj.ContContainer.classList.remove(FIXED);
+                obj.ContContainer.style.top = `${value.paddingTop}vh`;
+            }
+            
+            
+
             //leftContent
             obj.leftContent.style.opacity = calcValue(value.leftContent_opacity_in, currentYOffset);
             obj.leftContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformX_in, currentYOffset)}%,0, 0)`;
@@ -98,40 +124,7 @@ function playAnimation(){
             }else{                
                 obj.rightContainer.style.display = "none";
             }
-
-            const fixedPoint = value.sectionPaddingTop - (value.rightContent_opacity_in[2].end*value.sectionPaddingTop);
-            if(scrollRatio > value.rightContent_opacity_in[2].end && scrollRatio <= 0.8){                
-                obj.container.classList.add("fixed");
-                obj.container.style.top = `-${fixedPoint}vh`;
-            }else{
-                console.log(scrollRatio);
-                if(scrollRatio > 0.8){
-                    const startPoint = value.sectionPaddingTop - (value.bottomContent_opacity_in[2].end * value.sectionPaddingTop )
-                    obj.container.classList.remove("fixed");
-                    obj.container.style.top = `${startPoint + fixedPoint}vh`;
-                    console.log(startPoint + fixedPoint);
-                    // obj.container.style.transform = `translateY : -${fixedPoint}vh`;
-                }else{
-                    obj.container.classList.remove("fixed");
-                    obj.container.style.top =`0`;
-                }
-                
-            }
-
-            
-
-            
-            container_translateY = [0,100 , {start : 0.8, end: 1}];
-            obj.container.style.transform = `translate3d(0, ${calcValue(value.container_translateY,currentYOffset)}vh,0)`;
-            
-            // if(scrollRatio > 0.8 && scrollRatio <1){
-            //     obj.container.classList.remove("fixed");
-            //     container_translateY = [0,100 , {start : 0.8, end: 1}];
-            //     obj.container.style.transform = `translate3d(0, ${calcValue(value.container_translateY,currentYOffset)}vh,0)`;
-            // }
-
-            // obj.container.classList.remove("fixed");
-            // obj.container.style.top = `-${fixedPoint}vh`;
+           
 
 
             //conceptText
