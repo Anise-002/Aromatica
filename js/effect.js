@@ -82,29 +82,28 @@ function playAnimation(){
             break;
         case 2 :
 
-            const fixedPadding = (value.sectionPaddingTop- value.paddingFixedTop); 
-            //fixed될때 section의 padding-top의 값(50vh - 10vh);
-            const fixedRatio = (innerHeight / fixedPadding) / scrollHeight;
+            const fixedPadding = (value.sectionPaddingTop - value.paddingFixedTop); 
+            //fixed될때 section의 padding-top의 값(50vh - 40vh) = 10vh;
+            //fixed가 되길 원하는 시작점의 section padding-top(40vh)의 px값
+            const fixedRatio = (innerHeight * value.paddingFixedTop/100) / scrollHeight;
             //fixed될때의 시작점 : 40vh의 px값을 구한 후 sectionheight의 비율을 구함
-            const paddingPx = innerHeight / value.paddingFixedTop; 
-            //fixed할때 padding-top의 px값
+            const paddingPx = (innerHeight * fixedPadding/100);
+            //10vh의 px값 구하기
             const moveStart = paddingPx + (value.bottomContent_opacity_in[2].end * scrollHeight);
-            //fixed할떄의 paddin의 값 + 지금까지 스크롤한 px값
+            //fixed할떄의 padding의 값 + 지금까지 스크롤한 px값
            
             const FIXED = "fixed";
 
-            console.log(fixedRatio);
+            obj.ContContainer.classList.remove(FIXED);
+            obj.ContContainer.style.top = `${value.sectionPaddingTop}vh`;
+
             if(scrollRatio > fixedRatio  && scrollRatio < value.bottomContent_opacity_in[2].end){
                 obj.ContContainer.classList.add(FIXED);
-                obj.ContContainer.style.top = `${value.paddingFixedTop}vh`;
+                obj.ContContainer.style.top = `${fixedPadding}vh`;
             }else if(scrollRatio >= value.bottomContent_opacity_in[2].end && scrollRatio <1){
                 obj.ContContainer.classList.remove(FIXED);
                 obj.ContContainer.style.top = `${moveStart}px`;
-            }else{
-                obj.ContContainer.classList.remove(FIXED);
-                obj.ContContainer.style.top = `${value.paddingTop}vh`;
             }
-            
             
 
             //leftContent
@@ -124,8 +123,6 @@ function playAnimation(){
             }else{                
                 obj.rightContainer.style.display = "none";
             }
-           
-
 
             //conceptText
             obj.conceptText.style.opacity = calcValue(value.conceptText_opacity_in,currentYOffset);
@@ -134,9 +131,6 @@ function playAnimation(){
             //bottomContent
             obj.bottomContent.style.opacity = calcValue(value.bottomContent_opacity_in,currentYOffset);
             obj.bottomContent.style.transform = `translate3d(0, ${calcValue(value.bottomContent_translateY_in, currentYOffset)}%, 0)`;
-
-            
-
 
     }
 }

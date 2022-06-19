@@ -100,7 +100,7 @@ const scenInfo = [
             //container
             container_translateY : [ ],
             sectionPaddingTop : 50,
-            paddingFixedTop : 10,
+            paddingFixedTop : 40,
             //leftContent
             leftContent_opacity_in : [0, 1, {start : 0.12, end : 0.17}],
             leftContent_transformX_in : [-50, 0, {start : 0.12, end : 0.17}],
