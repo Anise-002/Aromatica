@@ -1,121 +1,139 @@
 @charset "utf-8";
 
 html {
-	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 14px;
-}
-body {
-	overflow-x: hidden;
-	color: rgb(29, 29, 31);
-	letter-spacing: -0.05em;
-	background: #F3F0EB;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
 }
 
-nav{
+body {
+    overflow-x: hidden;
+    color: rgb(29, 29, 31);
+    letter-spacing: -0.05em;
+    background: #F3F0EB;
+}
+
+nav {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;    
-	background: #F3F0EB;
+    align-items: center;
+    background: #F3F0EB;
     z-index: 100;
 }
-#top-nav{
+
+#top-nav {
     height: 50px;
 }
-#top-nav ul{
+
+#top-nav ul {
     display: flex;
     justify-content: space-around;
     width: 85vw;
 }
-#bottom-nav{
+
+#bottom-nav {
     top: 50px;
 }
-#bottom-nav ul{
+
+#bottom-nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 85vw;
     height: 70px;
 }
-#bottom-nav .menu-button{
-    width:25px;
+
+#bottom-nav .menu-button {
+    width: 25px;
     height: 50%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     cursor: pointer;
 }
-#bottom-nav .menu-button span{
+
+#bottom-nav .menu-button span {
     display: block;
     width: 100%;
-    height:1px;
+    height: 1px;
     background-color: black;
 }
-#bottom-nav .logo a{
+
+#bottom-nav .logo a {
     display: block;
     width: 100%;
     height: 100%;
 }
-#bottom-nav .logo img{
+
+#bottom-nav .logo img {
     width: 35vw;
 }
-#bottom-nav .menu-icon{
+
+#bottom-nav .menu-icon {
     display: flex;
 }
-#bottom-nav .menu-icon a{
+
+#bottom-nav .menu-icon a {
     display: block;
     width: 25px;
     height: 25px;
 }
-#bottom-nav .menu-icon a:first-child{
+
+#bottom-nav .menu-icon a:first-child {
     margin-right: 10px;
 }
-#bottom-nav .menu-icon a img{
+
+#bottom-nav .menu-icon a img {
     width: 100%;
 }
 
 /*----------sections---------------------*/
 
-.scroll-section{
+.scroll-section {
     width: 100vw;
     padding-top: 50vh;
     overflow: hidden;
 }
-.sticky-elem{
+
+.sticky-elem {
     display: none;
     position: fixed;
     width: 100%;
     opacity: 0;
 }
+
 #show-section-0 #section-0 .sticky-elem,
 #show-section-0 #section-0 .sticky-canvas,
 #show-section-1 #section-1 .sticky-elem,
 #show-section-2 #section-2 .sticky-elem,
-#show-section-3 #section-3 .sticky-elem{
+#show-section-3 #section-3 .sticky-elem {
     display: block;
 }
+
 .scroll-effect-end .sticky-elem {
-	/* 스크롤 효과가 모두 끝나고, 아래 일반 콘텐츠 영역에서는 sticky-elem들을 모두 안보이도록 */
-	display: none !important;
+    /* 스크롤 효과가 모두 끝나고, 아래 일반 콘텐츠 영역에서는 sticky-elem들을 모두 안보이도록 */
+    display: none !important;
 }
-.main-text{
+
+.main-text {
     font-family: 'Black Han Sans', sans-serif;
     font-size: 12vw;
     text-align: center;
     color: aliceblue;
 }
+
 /*----------section-0*/
- #section-0 h1{
+#section-0 h1 {
     position: relative;
     text-shadow: 1px 1px black;
     z-index: 5;
     font-size: 14vw;
-} 
+}
 
-#section-0 .sticky-canvas{
+#section-0 .sticky-canvas {
     position: fixed;
     display: none;
     top: 0;
@@ -124,58 +142,71 @@ nav{
     height: 100%;
     overflow: hidden;
 }
-.sticky-canvas canvas{
+
+.sticky-canvas canvas {
     position: absolute;
     top: 50%;
     left: 50%;
 }
-#section-0 .main-text{
+
+#section-0 .main-text {
     padding: 0 2vw;
 }
-#section-0 .a{
+
+#section-0 .a {
     font-size: 14vw;
     top: 53vh;
     text-align: right;
 }
-#section-0 .a p{
+
+#section-0 .a p {
     width: 50vw;
 }
-#section-0 .b{
+
+#section-0 .b {
     top: 60vh;
 }
-#section-0 .c{
+
+#section-0 .c {
     top: 60vh;
 }
-#section-0 .d{
+
+#section-0 .d {
     padding: 0 5vw;
     font-size: 8vw;
     top: 15vh;
 }
 
-.title-text{
+.title-text {
     text-align: center;
     font-size: 6vw;
     color: black;
 }
+
 /* ------------- #section-1 */
-#section-1{
+#section-1 {
     height: 100vh;
     padding-top: 30vh;
 }
-#section-1 .title-text{
+
+#section-1 .title-text {
     position: relative;
     margin-top: 40vh;
 }
-#section-1 .sticky-elem.a{
+
+#section-1 .sticky-elem.a {
     top: 30vh;
 }
-#section-1 .sticky-elem.b{
-    top:37vh;
+
+#section-1 .sticky-elem.b {
+    top: 37vh;
 }
-#section-1 .sticky-elem.c{
-    top:48vh;
+
+#section-1 .sticky-elem.c {
+    top: 48vh;
 }
-#section-1 .button{
+
+#section-1 .button {
     width: 50vw;
     left: 50%;
     border: 1px solid black;
@@ -184,42 +215,49 @@ nav{
     margin-top: 3vh;
     transition: hover 0.3s;
 }
-#section-1 .button:hover{
+
+#section-1 .button:hover {
     color: white;
     background-color: black;
 }
 
 /* ------------- #section-2 */
-#section-2{
+#section-2 {
     position: relative;
     text-align: center;
     z-index: 1;
     /* padding-top: vh; */
 }
-#section-2 .container1{
+
+#section-2 .container1 {
     position: absolute;
     width: 90vw;
     left: 50%;
     transform: translateX(-50%);
 }
-#section-2 .container1.fixed{
+
+#section-2 .container1.fixed {
     position: fixed;
 }
-#section-2 .title-text .sub-title{
+
+#section-2 .title-text .sub-title {
     display: inline-block;
     font-size: 2vw;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     margin-bottom: 10px;
 }
-#section-2 .main-img-container{
+
+#section-2 .main-img-container {
     position: relative;
 }
-#section-2 .main-img{
+
+#section-2 .main-img {
     display: inline-block;
     width: 35vw;
     margin-top: 5vh;
 }
-#section-2 .lavender-left{
+
+#section-2 .lavender-left {
     position: absolute;
     width: 35vw;
     height: 35vw;
@@ -227,14 +265,15 @@ nav{
     left: 5vw;
 }
 
-#section-2 .lavender-left img{
+#section-2 .lavender-left img {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
 }
-#section-2 .lavender-left .circle{
+
+#section-2 .lavender-left .circle {
     position: absolute;
     width: 28vw;
     height: 28vw;
@@ -242,7 +281,8 @@ nav{
     left: 3vw;
     animation: circleAnimation 20s infinite linear;
 }
-#section-2 .sweet-right{
+
+#section-2 .sweet-right {
     position: absolute;
     width: 40vw;
     height: 40vw;
@@ -250,14 +290,16 @@ nav{
     right: 5vw;
     z-index: -1;
 }
-#section-2 .sweet-right img{
+
+#section-2 .sweet-right img {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
 }
-#section-2 .sweet-right .circle{
+
+#section-2 .sweet-right .circle {
     position: absolute;
     width: 28vw;
     height: 28vw;
@@ -265,133 +307,176 @@ nav{
     left: 5vw;
     animation: circleAnimation 20s infinite linear reverse;
 }
+
 @keyframes circleAnimation {
-    100%{
+    100% {
         transform: rotate(360deg);
     }
-    
+
 }
-#section-2 .sub-text p{
+
+#section-2 .sub-text p {
     position: relative;
     width: 25vw;
     font-size: 0.5vw;
 }
-#section-2 .sub-text span.horizon{
+
+#section-2 .sub-text span.horizon {
     position: absolute;
     display: block;
     width: 15vw;
     height: 1px;
     background-color: black;
 }
-#section-2 .sub-text span.vertical{
+
+#section-2 .sub-text span.vertical {
     position: absolute;
     display: block;
     width: 12vw;
     height: 1px;
     background-color: black;
 }
-#section-2 .left-text{
+
+#section-2 .left-text {
+    display: none;
     position: absolute;
     top: 20vh;
     left: 1.5vw;
 }
-#section-2 .left-text p{
+
+#section-2 .left-text p {
     margin-top: 1vw;
     text-align: right;
 }
-#section-2 .left-text span.horizon{
+
+#section-2 .left-text span.horizon {
     position: absolute;
     top: -5vh;
     right: -10vw;
 }
-#section-2 .left-text span.vertical{
+
+#section-2 .left-text span.vertical {
     position: absolute;
-    transform: rotate(-45deg) translate(-50%,0);
+    transform: rotate(-45deg) translate(-50%, 0);
     right: 0;
     left: 14vw;
     top: -5vh;
 }
-#section-2 .right-text{
+
+#section-2 .right-text {
+    display: none;
     position: absolute;
     bottom: 2vh;
     right: 0vw;
 }
-#section-2 .right-text p{
+
+#section-2 .right-text p {
     margin-top: 1vw;
     text-align: left;
 }
-#section-2 .right-text span.horizon{
+
+#section-2 .right-text span.horizon {
     position: absolute;
     top: -3vh;
     left: -8vw;
 }
-#section-2 .right-text span.vertical{
+
+#section-2 .right-text span.vertical {
     position: absolute;
     width: 8vw;
-    transform: rotate(-135deg) translate(-50%,0);
+    transform: rotate(-135deg) translate(-50%, 0);
     right: 14.3vw;
     top: -3vh;
 
 }
-#section-2 .concept-text-container{
-    display: flex;
+
+#section-2 .concept-text-container {
+    display: none;
     align-items: center;
     justify-content: center;
     height: 10vh;
     margin: 2vh 0 0 0;
 }
-#section-2 .concept-text-container span{
+
+#section-2 .concept-text-container span {
     display: block;
     width: 1px;
     height: 20%;
     background-color: black;
 }
-#section-2 .concept-text-container p{
+
+#section-2 .concept-text-container p {
     padding: 0 5vw;
 }
 
-#section-2 .bottom-content-text{
+#section-2 .bottom-content-text {
+    display: none;
     padding: 0 8vw;
     font-size: 2vw;
 }
+
 /* ------------- #section-3 */
-#section-3 canvas{
-    background-color: aliceblue;
+#section-3 {
+    position: relative;
+    padding-top: 0;
+}
+
+#section-3 .sticky-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#section-3 .sticky-canvas.fixed {
+    position: fixed;
 }
 
 /* ------------- #section-4 */
-#section-4 .products-container{
+#section-4 {
+    padding-top: 0;
+
+}
+
+#section-4 .products-container {
     width: 100vw;
 }
-#section-4 .products-container h2{
+
+#section-4 .products-container h2 {
     text-align: center;
     font-size: 8vw;
 }
-#section-4 .products-container .products{
+
+#section-4 .products-container .products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 7vh 0 8vh;
 
 }
-#section-4 .products-container .products div{
+
+#section-4 .products-container .products div {
     width: 35%;
     padding: 0 3vw;
     margin-bottom: 5vh;
     text-align: center;
 }
-#section-4 .products-container .products div p{
+
+#section-4 .products-container .products div p {
     font-size: 3vw;
     margin-top: 1vh;
 }
-#section-4 .products-container .products div img{
+
+#section-4 .products-container .products div img {
     width: 80%;
 }
-.buy-button{
+
+.buy-button {
     display: inline-block;
     width: 80%;
     font-size: 1vw;
     border: 1px solid black;
     padding: 1vh 3vw;
-    margin-top: 2vh ;
+    margin-top: 2vh;
 }
