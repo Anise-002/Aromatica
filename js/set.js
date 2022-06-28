@@ -79,10 +79,13 @@ function setLayout() {
 
     playAnimation();
 
+
+
     //canvas size 
     const heightRatio = window.innerHeight / 1080;
     scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
     scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+
 
 
 }

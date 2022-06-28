@@ -50,7 +50,7 @@ const scenInfo = [
     {
         //1
         type: FULLHEIGHT,
-        heightNum: 3,
+        heightNum: 2,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-1'),
@@ -131,7 +131,9 @@ const scenInfo = [
         imageCount: 2,
         obj: {
             container: document.querySelector('#section-3'),
-            convasContainer: document.querySelector("#section-3 .sticky-canvas"),
+            h2: document.querySelector("#section-3 h2"),
+            textContainer: document.querySelector('#section-3 .text-container'),
+            canvasContainer: document.querySelector("#section-3 .sticky-canvas"),
             canvas: document.querySelector('#video-canvas-1'),
             context: document.querySelector("#video-canvas-1").getContext('2d'),
             canvasImgpath: ["../img/2.jpg", "../img/3.jpg"],
@@ -139,6 +141,8 @@ const scenInfo = [
 
         },
         value: {
+            canvasblendImage: [0, 0, { start: 0, end: 0 }],
+            canvasText: [0, 0, { start: 0, end: 0.6 }],
         }
     },
     {

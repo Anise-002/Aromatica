@@ -153,15 +153,98 @@ function playAnimation() {
 
 
             scenInfo[3].obj.context.drawImage(scenInfo[3].obj.imgs[0], 0, 0);
+            scenInfo[3].obj.canvasContainer.classList.remove(FIXED);
+
+
 
             break;
         case 3:
+            //캔버스 설정
+            obj.canvasContainer.classList.add(FIXED);
+            obj.canvasContainer.style.top = `0px`;
 
-            if (scrollRatio > 0 && scrollRatio < 0.6) {
-                obj.convasContainer.classList.add(FIXED);
-            } else {
-                obj.convasContainer.classList.remove(FIXED);
+            //캔버스 블랜딩 초기값 설정
+            value.canvasblendImage[0] = 0;
+            value.canvasblendImage[1] = 2000;
+            value.canvasblendImage[2].start = 0;
+            value.canvasblendImage[2].end = 0.6;
+            const blendHeight = calcValue(value.canvasblendImage, currentYOffset);
+            const heightRatio = window.innerHeight / 1080;
+
+            //이미지 블랜딩
+            const textStartPoint = ((obj.canvas.width * heightRatio) - window.innerWidth) / 2;
+            obj.context.drawImage(obj.imgs[0], 0, 0);
+            obj.context.drawImage(obj.imgs[1],
+                0, 1500 - blendHeight, obj.canvas.width, blendHeight,
+                textStartPoint, obj.canvas.height - blendHeight, obj.canvas.width, blendHeight
+            );
+            //Text 블랜딩
+            value.canvasText[0] = obj.canvas.height + 100;
+            value.canvasText[1] = obj.canvas.height / 2 - 100;
+
+            function makeText(positionX, contfont, subfont, margin) {
+                let positionY = calcValue(value.canvasText, currentYOffset);
+                const TextArr = ["따스한 온기를 전달하여 ", "고요한 무드로 이끌어주는 ", "바디 오일 "];
+                obj.context.font = `${contfont}vw 'Black Han Sans'`;
+
+                TextArr.map((i) => {
+                    obj.context.fillStyle = "white";
+                    obj.context.textAlign = "center";
+                    obj.context.fillText(i, positionX, positionY, window.innerWidth);
+                    positionY += margin;
+                })
+                obj.context.font = `${subfont}vw 'Black Han Sans'`;
+                obj.context.fillText("서런 바디오일 라벤터 & 마조람", positionX, positionY + 30);
 
             }
+
+
+
+
+
+            //태블릿 이상 대비 블랜딩
+            if (window.innerWidth < 768) {
+                makeText(obj.canvas.width / 2, 10, 7, 50);
+            } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+                makeText(obj.canvas.width / 2, 10, 5, 100);
+            } else if (window.innerWidth >= 1024 && window.innerWidth < 1920) {
+                obj.context.drawImage(obj.imgs[1],
+                    0, 1500 - blendHeight, obj.canvas.width / 2, blendHeight,
+                    0, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
+                );
+                obj.context.fillStyle = 'rgb(180,141,98)';
+                obj.context.fillRect(
+                    obj.canvas.width / 2, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
+                )
+                makeText(obj.canvas.width * 0.7, 4, 2, 80);
+                // obj.context.fillStyle = "white";
+                // obj.context.font = "5vw 'Black Han Sans'";
+                // obj.context.textAlign = "center";
+                // obj.context.fillText("따스한 온기를 전달하여 ", canvasTextPosition, calcValue(value.canvasText, currentYOffset));
+                // obj.context.fillText("고요한 무드로 이끌어주는 ", canvasTextPosition, calcValue(value.canvasText, currentYOffset) + 60);
+                // obj.context.fillText("바디 오일 ", canvasTextPosition, calcValue(value.canvasText, currentYOffset) + 120);
+                // obj.context.font = "3vw 'Black Han Sans'"
+                // obj.context.fillText("서런 바디오일 라벤터 & 마조람", canvasTextPosition, calcValue(value.canvasText, currentYOffset) + 220);
+            } else {
+                obj.context.drawImage(obj.imgs[1],
+                    0, 1500 - blendHeight, obj.canvas.width / 2, blendHeight,
+                    0, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
+                );
+                obj.context.fillStyle = 'rgb(180,141,98)';
+                obj.context.fillRect(
+                    obj.canvas.width / 2, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
+                )
+                makeText(obj.canvas.width * 0.75, 4, 2, 100);
+            }
+
+            //블랜딩 후
+            if (scrollRatio > value.canvasblendImage[2].end + 0.05) {
+                const moveheight = `${(value.canvasblendImage[2].end + 0.05) * scrollHeight}`;
+                obj.canvasContainer.classList.remove(FIXED);
+                obj.canvasContainer.style.top = `${moveheight}px`;
+
+            }
+
+
     }
 }
