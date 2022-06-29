@@ -6,7 +6,6 @@ let enterNewSection;
 //이미지시퀀스
 function setCanvasImage() {
     let imgElem;
-
     for (let i = 1; i < scenInfo[0].value.videoImgCount + 1; i++) {
         imgElem = new Image();
         if (i < 10) i = `00${i}`;
@@ -14,15 +13,11 @@ function setCanvasImage() {
         imgElem.src = `../video/1/${i}.jpg`;
         scenInfo[0].obj.videoImg.push(imgElem);
     }
-
     for (let i = 0; i < scenInfo[3].imageCount; i++) {
         imgElem = new Image();
         imgElem.src = scenInfo[3].obj.canvasImgpath[i];
         scenInfo[3].obj.imgs.push(imgElem);
     }
-
-
-
 }
 
 
@@ -30,7 +25,6 @@ function setCanvasImage() {
 function setCurrentNum() {
     enterNewSection = false;
     prevScrollHeight = 0;
-
     for (let i = 0; i < currentScene; i++) {
         prevScrollHeight += scenInfo[i].scrollHeight;
     }
@@ -45,10 +39,8 @@ function setCurrentNum() {
         currentScene--;
         document.body.setAttribute('id', `show-section-${currentScene}`);
     }
-
     if (enterNewSection) return;
     playAnimation();
-
 }
 
 //초기세팅 값 및 로딩 세팅 값
@@ -58,14 +50,14 @@ function setLayout() {
             scenInfo[i].scrollHeight = scenInfo[i].heightNum * window.innerHeight;
         }
         if (scenInfo[i].type === FULLHEIGHT) {
-            scenInfo[i].scrollHeight = scenInfo[i].obj.container.offsetHeight + innerHeight;
+            scenInfo[i].scrollHeight = scenInfo[i].obj.container.offsetHeight;
         }
         if (scenInfo[i].type === NORMAL) {
+            console.log(scenInfo[i].scrollHeight);
             scenInfo[i].scrollHeight = scenInfo[i].obj.container.offsetHeight;
         }
         scenInfo[i].obj.container.style.height = `${scenInfo[i].scrollHeight}px`;
     }
-
     YOffset = window.pageYOffset;
     let totalScrollHeight = 0;
     for (let i = 0; i < scenInfo.length; i++) {
@@ -78,16 +70,10 @@ function setLayout() {
     document.body.setAttribute('id', `show-section-${currentScene}`);
 
     playAnimation();
-
-
-
     //canvas size 
     const heightRatio = window.innerHeight / 1080;
     scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
     scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-
-
-
 }
 
 setCanvasImage();

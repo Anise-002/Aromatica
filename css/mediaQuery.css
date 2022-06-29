@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* min-width : 768 */
-@media screen and (min-width: 768px) {
+@media all and (min-width: 768px) and (max-width : 1023px) {
 
     /* #section-0 */
     #section-0 h1 {
@@ -36,12 +36,12 @@
     }
 
     #section-1 .sticky-elem.b {
-        top: 41vh;
+        top: 53vw;
         font-size: 5vw;
     }
 
     #section-1 .sticky-elem.c {
-        top: 55vh;
+        top: 75vw;
     }
 
     #section-1 .button {
@@ -50,8 +50,10 @@
     }
 
     /* #section - 2 */
+
     #section-2 .title-text .sub-title {
         font-size: 3vw;
+        margin-top: 5vh;
     }
 
     #section-2 .main-img {
@@ -62,21 +64,20 @@
     #section-2 .lavender-left {
         width: 25vw;
         height: 25vw;
-        bottom: 0vh;
         left: 16vw;
     }
 
     #section-2 .lavender-left .circle {
         width: 20vw;
         height: 20vw;
-        top: 3vh;
+        top: 3vw;
         left: 2vw;
     }
 
     #section-2 .sweet-right {
         width: 25vw;
         height: 25vw;
-        top: 7vh;
+        top: 7vw;
         right: 20vw;
     }
 
@@ -93,7 +94,7 @@
     }
 
     #section-2 .left-text {
-        top: 27vh;
+        top: 30vw;
         left: 4vw;
     }
 
@@ -103,23 +104,28 @@
 
     #section-2 .left-text span.horizon {
         position: absolute;
-        top: -5vh;
-        right: -4.2vw;
+        top: -8vw;
+        right: -9.2vw;
+    }
+
+    #section-2 .left-text span.vertical {
+        left: 19vw;
+        top: -8vw;
     }
 
     #section-2 .right-text {
-        bottom: 8vh;
+        bottom: 8vw;
         right: 5vw;
     }
 
     #section-2 .right-text span.horizon {
         position: absolute;
-        top: -4.5vh;
+        top: -7.5vw;
         left: -4.4vw;
     }
 
     #section-2 .right-text span.vertical {
-        top: -4.5vh;
+        top: -7.5vw;
     }
 
     #section-2 .bottom-content-text {
@@ -137,6 +143,7 @@
     /* section-4 */
     #section-4 {
         padding-top: 5vh;
+        height: 220vh;
     }
 
     #section-4 .title-text {
@@ -167,21 +174,20 @@
 }
 
 /* min-width : 1024 */
-@media screen and (min-width : 1024px) {
+@media all and (min-width : 1024px) and (max-width : 1919px) {
 
     /* nav */
     #bottom-nav .logo img {
-        width: 20vw;
+        width: 200px;
     }
 
     /* #section-0 */
     #section-0 h1 {
-        font-size: 9vw;
-        letter-spacing: 1vw;
+        font-size: 75px;
     }
 
     .main-text {
-        font-size: 6vw;
+        font-size: 65px;
     }
 
     #section-0 .a {
@@ -192,68 +198,83 @@
     }
 
     #section-0 .a p {
-        font-size: 8vw;
+        font-size: 65px;
     }
 
     #section-0 .d {
         padding: 0 5vw;
-        font-size: 5vw;
+        font-size: 55px;
         top: 50vh;
     }
 
     /* #section-1 */
     .title-text {
-        font-size: 3vw;
+        font-size: 45px;
     }
 
     #section-1 .sticky-elem.b {
-        top: 41vh;
-        font-size: 3vw;
+        top: 45vh;
+        font-size: 35px;
+    }
+
+    #section-1 .sticky-elem.b span {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        display: block;
+        width: 70%;
     }
 
     #section-1 .sticky-elem.c {
-        top: 55vh;
+        top: 60vh;
     }
 
     #section-1 .button {
         width: 35vw;
-        font-size: 2vw;
+        max-width: 500px;
+        font-size: 18px;
     }
 
     /* #section - 2 */
     #section-2 .title-text {
-        margin-top: -2vh;
+        font-size: 43px;
     }
 
     #section-2 .title-text .sub-title {
-        font-size: 1vw;
+        font-size: 24px;
+    }
+
+    #section-2 .main-img-container {
+        max-width: 920px;
+        left: 50%;
+        transform: translateX(-50%);
+
     }
 
     #section-2 .main-img {
         display: inline-block;
-        width: 15vw;
+        width: 170px;
         margin-top: 5vh;
     }
 
     #section-2 .lavender-left {
-        width: 15vw;
-        height: 15vw;
-        bottom: 0vh;
-        left: 28vw;
+        width: 170px;
+        height: 170px;
+        left: 270px;
     }
 
     #section-2 .lavender-left .circle {
-        width: 15vw;
-        height: 15vw;
-        top: 2vh;
+        width: 170px;
+        height: 170px;
+        top: 1vw;
         left: 0vw;
     }
 
     #section-2 .sweet-right {
-        width: 20vw;
-        height: 20vw;
-        top: 7vh;
-        right: 26vw;
+        width: 200px;
+        height: 200px;
+        top: 50px;
+        right: 270px;
     }
 
     #section-2 .sweet-right img {
@@ -262,40 +283,61 @@
     }
 
     #section-2 .sweet-right .circle {
-        width: 15vw;
-        height: 15vw;
-        top: 3vh;
-        left: 4vw;
+        width: 170px;
+        height: 170px;
+        top: 2vw;
+        left: 3vw;
+    }
+
+    #section-2 .sub-text p {
+        width: 250px;
+        font-size: 13px;
     }
 
     #section-2 .left-text {
-        top: 27vh;
-        left: 11vw;
+        top: 200px;
+        left: 110px;
     }
 
     #section-2 .left-text span.horizon {
         position: absolute;
-        top: -5vh;
-        right: -4.2vw;
+        top: -70px;
+        right: -57px;
+    }
+
+    #section-2 .left-text span.vertical {
+        left: 113px;
+        top: -70.5px;
     }
 
     #section-2 .right-text {
-        bottom: 8vh;
-        right: 11vw;
+        bottom: 40px;
+        right: 106px;
     }
 
     #section-2 .right-text span.horizon {
         position: absolute;
-        top: -4.5vh;
-        left: -4.4vw;
+        top: -62px;
+        left: -42px;
     }
 
     #section-2 .right-text span.vertical {
-        top: -4.5vh;
+        top: -62px;
+        right: 97px;
+
     }
 
     #section-2 .bottom-content-text {
-        font-size: 1.5vw;
+        font-size: 18px;
+    }
+
+    #section-2 .bottom-content-text span {
+        position: relative;
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1300px;
+
     }
 
     /* section -3 */
@@ -307,16 +349,20 @@
     }
 
     #section-3 .text-container h2 {
-        font-size: 4vw;
+        font-size: 40px;
     }
 
     #section-3 .text-container h2 span {
-        font-size: 2.5vw;
+        font-size: 24px;
     }
 
     /* section-4 */
     #section-4 .title-text {
-        font-size: 5vw;
+        font-size: 45px;
+    }
+
+    #section-4 .title-text span {
+        max-width: 1200px;
     }
 
     #section-4 .products-container {
@@ -340,9 +386,15 @@
     }
 
     #section-4 .imgs-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #section-4 .imgs-wrap {
         position: relative;
         display: block;
         width: 80vw;
+        height: 120vh;
     }
 
     #section-4 .imgs-container img:nth-child(1) {
@@ -366,3 +418,5 @@
         width: 37%;
     }
 }
+
+/* @media all and (min-width : 1920) {} */

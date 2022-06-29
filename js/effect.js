@@ -97,6 +97,7 @@ function playAnimation() {
 
             obj.ContContainer.classList.remove(FIXED);
             obj.ContContainer.style.top = `${value.sectionPaddingTop}vh`;
+            // obj.ContContainer.style.left = 0;
 
             if (scrollRatio > fixedRatio && scrollRatio < value.bottomContent_opacity_in[2].end) {
                 obj.ContContainer.classList.add(FIXED);
@@ -108,27 +109,30 @@ function playAnimation() {
 
             // 화면 너비에 따른 Horizon,Vertical width 지정 함수
             function setLineWidth (){
-                if(innerWidth >= 768){
-                    value.left_horizon_line[1] = 11;
-                    value.left_vertical_line[1] = 9;
-                    value.right_horizon_line[1] = 11;
-                    value.right_vertical_line[1] = 9;
-                }else if(innerWidth >= 1024){
-                    value.left_horizon_line[1] = 12.8;
-                    value.left_vertical_line[1] = 5;
-                    value.right_horizon_line[1] = 12.8;
-                    value.right_vertical_line[1] = 5;
-                }else if(innerWidth > 1920){
-                    value.left_horizon_line[1] = 5;
-                    value.left_vertical_line[1] = 3;
-                    value.right_horizon_line[1] = 5;
-                    value.right_vertical_line[1] = 3;
-                }else {
+                if(innerWidth < 768){
                     value.left_horizon_line[1] = 15;
                     value.left_vertical_line[1] = 11;
                     value.right_horizon_line[1] = 14;
                     value.right_vertical_line[1] = 9;
                 }
+                if(innerWidth >= 768){
+                    value.left_horizon_line[1] = 11;
+                    value.left_vertical_line[1] = 9;
+                    value.right_horizon_line[1] = 11;
+                    value.right_vertical_line[1] = 9;
+                }
+                if(innerWidth >= 1024){
+                    value.left_horizon_line[1] = 155;
+                    value.left_vertical_line[1] = 80;
+                    value.right_horizon_line[1] = 155;
+                    value.right_vertical_line[1] = 80;
+                }
+                if(innerWidth > 1920){
+                    value.left_horizon_line[1] = 5;
+                    value.left_vertical_line[1] = 3;
+                    value.right_horizon_line[1] = 5;
+                    value.right_vertical_line[1] = 3;
+                }          
             };
             setLineWidth();
 
@@ -138,8 +142,14 @@ function playAnimation() {
                 obj.leftContainer.style.display = "block";
                 obj.leftContent.style.opacity = calcValue(value.leftContent_opacity_in, currentYOffset);
                 obj.leftContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformX_in, currentYOffset)}%,0, 0)`;
-                obj.leftHorizon.style.width = `${calcValue(value.left_horizon_line, currentYOffset)}vw`;
-                obj.leftVertical.style.width = `${calcValue(value.left_vertical_line, currentYOffset)}vw`;
+                if(innerWidth >= 1024){
+                    obj.leftHorizon.style.width = `${calcValue(value.left_horizon_line, currentYOffset)}px`;
+                    obj.leftVertical.style.width = `${calcValue(value.left_vertical_line, currentYOffset)}px`;
+                }else{
+                    obj.leftHorizon.style.width = `${calcValue(value.left_horizon_line, currentYOffset)}vw`;
+                    obj.leftVertical.style.width = `${calcValue(value.left_vertical_line, currentYOffset)}vw`;
+                }
+                
                 
             } else {
                 obj.leftContainer.style.display = "none";
@@ -150,8 +160,14 @@ function playAnimation() {
                 //rightContent
                 obj.rightContent.style.opacity = calcValue(value.rightContent_opacity_in, currentYOffset);
                 obj.rightContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformY_in, currentYOffset)}%,0, 0)`;
-                obj.rightHorizon.style.width = `${calcValue(value.right_horizon_line, currentYOffset)}vw`;
-                obj.rightVertical.style.width = `${calcValue(value.right_vertical_line, currentYOffset)}vw`;
+                if(innerWidth >= 1024){
+                    obj.rightHorizon.style.width = `${calcValue(value.right_horizon_line, currentYOffset)}px`;
+                    obj.rightVertical.style.width = `${calcValue(value.right_vertical_line, currentYOffset)}px`;
+                }else{
+                    obj.rightHorizon.style.width = `${calcValue(value.right_horizon_line, currentYOffset)}vw`;
+                    obj.rightVertical.style.width = `${calcValue(value.right_vertical_line, currentYOffset)}vw`;
+                }
+
             } else {
                 obj.rightContainer.style.display = "none";
             }
@@ -197,6 +213,7 @@ function playAnimation() {
             );
 
             //Text 블랜딩
+
             if (scrollRatio > 0 ) {
                 value.textContainer_Y[0] = obj.canvas.height;
                 value.textContainer_Y[1] = 0;

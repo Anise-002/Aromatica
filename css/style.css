@@ -118,12 +118,7 @@ nav {
     display: none !important;
 }
 
-.main-text {
-    font-family: 'Black Han Sans', sans-serif;
-    font-size: 12vw;
-    text-align: center;
-    color: aliceblue;
-}
+
 
 /*----------section-0*/
 #section-0 h1 {
@@ -147,6 +142,13 @@ nav {
     position: absolute;
     top: 50%;
     left: 50%;
+}
+
+.main-text {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 12vw;
+    text-align: center;
+    color: aliceblue;
 }
 
 #section-0 .main-text {
@@ -177,16 +179,19 @@ nav {
     top: 15vh;
 }
 
+
+
+/* ------------- #section-1 */
+
+#section-1 {
+    height: 130vh;
+    padding-top: 30vh;
+}
+
 .title-text {
     text-align: center;
     font-size: 6vw;
     color: black;
-}
-
-/* ------------- #section-1 */
-#section-1 {
-    height: 100vh;
-    padding-top: 30vh;
 }
 
 #section-1 .title-text {
@@ -226,14 +231,13 @@ nav {
     position: relative;
     text-align: center;
     z-index: 1;
-    /* padding-top: vh; */
 }
 
 #section-2 .container1 {
     position: absolute;
-    width: 90vw;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #section-2 .container1.fixed {
@@ -413,6 +417,7 @@ nav {
     display: none;
     padding: 0 8vw;
     font-size: 2vw;
+    margin-bottom: 10vh;
 }
 
 /* ------------- #section-3 */
@@ -469,18 +474,31 @@ nav {
 
 /* ------------- #section-4 */
 #section-4 {
-    padding-top: 20vh;
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 0vh;
+    overflow: visible;
 }
 
 #section-4 .products-container {
     width: 100vw;
 }
 
-#section-4 .products-container h2 {
-    text-align: center;
-    font-size: 8vw;
+#section-4 .title-text {
+    position: relative;
+    width: 100%;
 }
+
+#section-4 .title-text span {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    max-width: 70vw;
+}
+
 
 #section-4 .products-container .products {
     display: flex;
@@ -502,6 +520,11 @@ nav {
     margin-top: 1vh;
 }
 
+#section-4 .products-container .products div p span {
+    font-size: 1vw;
+    margin-bottom: 10px;
+}
+
 #section-4 .products-container .products div img {
     width: 80%;
 }
@@ -513,4 +536,40 @@ nav {
     border: 1px solid black;
     padding: 1vh 3vw;
     margin-top: 2vh;
+    transition: 0.5s;
+}
+
+.buy-button:hover {
+    background-color: #B48D62;
+    color: aliceblue;
+    border: 1px solid white;
+}
+
+#section-4 .imgs-container {
+    width: 100vw;
+    height: 100%;
+}
+
+#section-4 .imgs-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+#section-4 .imgs-container img:nth-child(1) {
+    width: 50%;
+}
+
+#section-4 .imgs-container img:nth-child(2) {
+    width: 50%;
+}
+
+#section-4 .imgs-container img:nth-child(3) {
+    width: 100vw;
+}
+
+/* ------------- #section-5 */
+#section-5 {
+    background-color: #B48D62;
 }

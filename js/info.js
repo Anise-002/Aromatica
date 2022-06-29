@@ -76,7 +76,7 @@ const scenInfo = [
     {
         //2
         type: STICKY,
-        heightNum: 2.5,
+        heightNum: 3,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-2'),
