@@ -435,11 +435,11 @@ nav {
 }
 
 #section-3 .text-container {
-    position: relative;
-    display: none;
+    position: absolute;
+    /* display: none; */
+    top: 100%;
     width: 100%;
     height: 100vh;
-    background-color: #B48D62;
 }
 
 #section-3 .text-container.fixed {

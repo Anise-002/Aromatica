@@ -179,35 +179,20 @@ function playAnimation() {
                 textStartPoint, obj.canvas.height - blendHeight, obj.canvas.width, blendHeight
             );
             //Text 블랜딩
-            value.canvasText[0] = obj.canvas.height + 100;
-            value.canvasText[1] = obj.canvas.height / 2 - 100;
 
-            function makeText(positionX, contfont, subfont, margin) {
-                let positionY = calcValue(value.canvasText, currentYOffset);
-                const TextArr = ["따스한 온기를 전달하여 ", "고요한 무드로 이끌어주는 ", "바디 오일 "];
-                obj.context.font = `${contfont}vw 'Black Han Sans'`;
-
-                TextArr.map((i) => {
-                    obj.context.fillStyle = "white";
-                    obj.context.textAlign = "center";
-                    obj.context.fillText(i, positionX, positionY, window.innerWidth);
-                    positionY += margin;
-                })
-                obj.context.font = `${subfont}vw 'Black Han Sans'`;
-                obj.context.fillText("서런 바디오일 라벤터 & 마조람", positionX, positionY + 30);
-
+            if (scrollRatio > 0 && scrollRatio < value.canvasblendImage[2].end) {
+                value.textContainer_Y[0] = obj.canvas.height;
+                value.textContainer_Y[1] = 0;
+                value.textContainer_Y[2].end = value.canvasblendImage[2].end;
+                obj.textContainer.style.top = `${calcValue(value.textContainer_Y, currentYOffset)}px`;
+                console.log(obj.textContainer.style.top);
             }
 
 
 
 
-
             //태블릿 이상 대비 블랜딩
-            if (window.innerWidth < 768) {
-                makeText(obj.canvas.width / 2, 10, 7, 50);
-            } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-                makeText(obj.canvas.width / 2, 10, 5, 100);
-            } else if (window.innerWidth >= 1024 && window.innerWidth < 1920) {
+            if (window.innerWidth >= 1024) {
                 obj.context.drawImage(obj.imgs[1],
                     0, 1500 - blendHeight, obj.canvas.width / 2, blendHeight,
                     0, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
@@ -216,25 +201,7 @@ function playAnimation() {
                 obj.context.fillRect(
                     obj.canvas.width / 2, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
                 )
-                makeText(obj.canvas.width * 0.7, 4, 2, 80);
-                // obj.context.fillStyle = "white";
-                // obj.context.font = "5vw 'Black Han Sans'";
-                // obj.context.textAlign = "center";
-                // obj.context.fillText("따스한 온기를 전달하여 ", canvasTextPosition, calcValue(value.canvasText, currentYOffset));
-                // obj.context.fillText("고요한 무드로 이끌어주는 ", canvasTextPosition, calcValue(value.canvasText, currentYOffset) + 60);
-                // obj.context.fillText("바디 오일 ", canvasTextPosition, calcValue(value.canvasText, currentYOffset) + 120);
-                // obj.context.font = "3vw 'Black Han Sans'"
-                // obj.context.fillText("서런 바디오일 라벤터 & 마조람", canvasTextPosition, calcValue(value.canvasText, currentYOffset) + 220);
-            } else {
-                obj.context.drawImage(obj.imgs[1],
-                    0, 1500 - blendHeight, obj.canvas.width / 2, blendHeight,
-                    0, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
-                );
-                obj.context.fillStyle = 'rgb(180,141,98)';
-                obj.context.fillRect(
-                    obj.canvas.width / 2, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
-                )
-                makeText(obj.canvas.width * 0.75, 4, 2, 100);
+
             }
 
             //블랜딩 후
