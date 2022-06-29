@@ -76,7 +76,7 @@ const scenInfo = [
     {
         //2
         type: STICKY,
-        heightNum: 3,
+        heightNum: 2.5,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-2'),
@@ -101,7 +101,7 @@ const scenInfo = [
             //container
             container_translateY: [],
             sectionPaddingTop: 50,
-            paddingFixedTop: 40,
+            paddingFixedTop: 47,
             //leftContent
             leftContent_opacity_in: [0, 1, { start: 0.12, end: 0.17 }],
             leftContent_transformX_in: [-50, 0, { start: 0.12, end: 0.17 }],
@@ -149,7 +149,7 @@ const scenInfo = [
     {
         //4
         type: NORMAL,
-        heightNum: 2,
+        heightNum: 3,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-4'),

@@ -108,7 +108,12 @@ function playAnimation() {
 
             // 화면 너비에 따른 Horizon,Vertical width 지정 함수
             function setLineWidth (){
-                if(innerWidth >= 1024){
+                if(innerWidth >= 768){
+                    value.left_horizon_line[1] = 11;
+                    value.left_vertical_line[1] = 9;
+                    value.right_horizon_line[1] = 11;
+                    value.right_vertical_line[1] = 9;
+                }else if(innerWidth >= 1024){
                     value.left_horizon_line[1] = 12.8;
                     value.left_vertical_line[1] = 5;
                     value.right_horizon_line[1] = 12.8;
@@ -118,9 +123,9 @@ function playAnimation() {
                     value.left_vertical_line[1] = 3;
                     value.right_horizon_line[1] = 5;
                     value.right_vertical_line[1] = 3;
-                }else{
+                }else {
                     value.left_horizon_line[1] = 15;
-                    value.left_vertical_line[1] = 12;
+                    value.left_vertical_line[1] = 11;
                     value.right_horizon_line[1] = 14;
                     value.right_vertical_line[1] = 9;
                 }
@@ -192,12 +197,11 @@ function playAnimation() {
             );
 
             //Text 블랜딩
-            if (scrollRatio > 0 && scrollRatio < value.canvasblendImage[2].end) {
+            if (scrollRatio > 0 ) {
                 value.textContainer_Y[0] = obj.canvas.height;
                 value.textContainer_Y[1] = 0;
                 value.textContainer_Y[2].end = value.canvasblendImage[2].end;
                 obj.textContainer.style.top = `${calcValue(value.textContainer_Y, currentYOffset)}px`;
-                console.log(obj.textContainer.style.top);
             }
 
             //태블릿 이상 대비 블랜딩
