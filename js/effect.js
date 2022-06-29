@@ -23,7 +23,6 @@ function calcValue(value, currentYOffset) {
     return rv;
 }
 
-
 function playAnimation() {
     const current = scenInfo[currentScene]
     const obj = current.obj;
@@ -107,6 +106,27 @@ function playAnimation() {
                 obj.ContContainer.style.top = `${moveStart}px`;
             }
 
+            // 화면 너비에 따른 Horizon,Vertical width 지정 함수
+            function setLineWidth (){
+                if(innerWidth >= 1024){
+                    value.left_horizon_line[1] = 12.8;
+                    value.left_vertical_line[1] = 5;
+                    value.right_horizon_line[1] = 12.8;
+                    value.right_vertical_line[1] = 5;
+                }else if(innerWidth > 1920){
+                    value.left_horizon_line[1] = 5;
+                    value.left_vertical_line[1] = 3;
+                    value.right_horizon_line[1] = 5;
+                    value.right_vertical_line[1] = 3;
+                }else{
+                    value.left_horizon_line[1] = 15;
+                    value.left_vertical_line[1] = 12;
+                    value.right_horizon_line[1] = 14;
+                    value.right_vertical_line[1] = 9;
+                }
+            };
+            setLineWidth();
+
 
             //leftContent
             if (scrollRatio > 0.1) {
@@ -115,13 +135,13 @@ function playAnimation() {
                 obj.leftContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformX_in, currentYOffset)}%,0, 0)`;
                 obj.leftHorizon.style.width = `${calcValue(value.left_horizon_line, currentYOffset)}vw`;
                 obj.leftVertical.style.width = `${calcValue(value.left_vertical_line, currentYOffset)}vw`;
+                
             } else {
                 obj.leftContainer.style.display = "none";
             }
 
             if (scrollRatio > 0.2) {
                 obj.rightContainer.style.display = "block";
-
                 //rightContent
                 obj.rightContent.style.opacity = calcValue(value.rightContent_opacity_in, currentYOffset);
                 obj.rightContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformY_in, currentYOffset)}%,0, 0)`;
@@ -130,7 +150,6 @@ function playAnimation() {
             } else {
                 obj.rightContainer.style.display = "none";
             }
-
             //conceptText
             if (scrollRatio > 0.3) {
                 obj.conceptText.style.display = 'flex';
@@ -139,8 +158,6 @@ function playAnimation() {
             } else {
                 obj.conceptText.style.display = 'none';
             }
-
-
             //bottomContent
             if (scrollRatio > 0.5) {
                 obj.bottomContent.style.display = 'block';
@@ -149,15 +166,10 @@ function playAnimation() {
             } else {
                 obj.bottomContent.style.display = 'none';
             }
-
-
-
             scenInfo[3].obj.context.drawImage(scenInfo[3].obj.imgs[0], 0, 0);
             scenInfo[3].obj.canvasContainer.classList.remove(FIXED);
-
-
-
             break;
+
         case 3:
             //캔버스 설정
             obj.canvasContainer.classList.add(FIXED);
@@ -178,8 +190,8 @@ function playAnimation() {
                 0, 1500 - blendHeight, obj.canvas.width, blendHeight,
                 textStartPoint, obj.canvas.height - blendHeight, obj.canvas.width, blendHeight
             );
-            //Text 블랜딩
 
+            //Text 블랜딩
             if (scrollRatio > 0 && scrollRatio < value.canvasblendImage[2].end) {
                 value.textContainer_Y[0] = obj.canvas.height;
                 value.textContainer_Y[1] = 0;
@@ -187,9 +199,6 @@ function playAnimation() {
                 obj.textContainer.style.top = `${calcValue(value.textContainer_Y, currentYOffset)}px`;
                 console.log(obj.textContainer.style.top);
             }
-
-
-
 
             //태블릿 이상 대비 블랜딩
             if (window.innerWidth >= 1024) {

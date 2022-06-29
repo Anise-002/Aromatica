@@ -105,8 +105,8 @@ const scenInfo = [
             //leftContent
             leftContent_opacity_in: [0, 1, { start: 0.12, end: 0.17 }],
             leftContent_transformX_in: [-50, 0, { start: 0.12, end: 0.17 }],
-            left_horizon_line: [0, 15, { start: 0.05, end: 0.07 }],
-            left_vertical_line: [0, 12, { start: 0.07, end: 0.12 }],
+            left_horizon_line: [0, 0, { start: 0.05, end: 0.07 }],
+            left_vertical_line: [0, 0, { start: 0.07, end: 0.12 }],
 
             //rightContent
             rightContent_opacity_in: [0, 1, { start: 0.25, end: 0.3 }],
