@@ -127,12 +127,12 @@ function playAnimation() {
                     value.right_horizon_line[1] = 155;
                     value.right_vertical_line[1] = 80;
                 }
-                if(innerWidth > 1920){
-                    value.left_horizon_line[1] = 5;
-                    value.left_vertical_line[1] = 3;
-                    value.right_horizon_line[1] = 5;
-                    value.right_vertical_line[1] = 3;
-                }          
+                // if(innerWidth > 1920){
+                //     value.left_horizon_line[1] = 5;
+                //     value.left_vertical_line[1] = 3;
+                //     value.right_horizon_line[1] = 5;
+                //     value.right_vertical_line[1] = 3;
+                // }          
             };
             setLineWidth();
 
@@ -209,7 +209,7 @@ function playAnimation() {
             obj.context.drawImage(obj.imgs[0], 0, 0);
             obj.context.drawImage(obj.imgs[1],
                 0, 1500 - blendHeight, obj.canvas.width, blendHeight,
-                textStartPoint, obj.canvas.height - blendHeight, obj.canvas.width, blendHeight
+                0, obj.canvas.height - blendHeight, obj.canvas.width, blendHeight
             );
 
             //Text 블랜딩
