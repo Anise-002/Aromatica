@@ -142,8 +142,7 @@
 
     /* section-4 */
     #section-4 {
-        padding-top: 5vh;
-        height: 220vh;
+        justify-content: center
     }
 
     #section-4 .title-text {
@@ -151,7 +150,11 @@
     }
 
     #section-4 .products-container {
-        width: 85vw;
+        width: 100%;
+    }
+
+    #section-4 .products-container .products {
+        max-width: 80vw;
     }
 
     #section-4 .products-container .products div {
@@ -171,10 +174,54 @@
         width: 90%;
         font-size: 1vw;
     }
+
+    /* #section-5 */
+    #section-5 {
+        height: 100vh;
+        margin-bottom: 10vh;
+    }
+
+    #section-5 .imgs-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    #section-5 .imgs-container .imgs-wrap {
+        position: absolute;
+        display: block;
+        width: 80vw;
+        height: 100%;
+    }
+
+    #section-5 .img-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 44%;
+        height: 47%;
+    }
+
+    #section-5 .img-2 {
+        position: absolute;
+        top: 19%;
+        right: 0;
+        width: 55%;
+        height: 58%;
+    }
+
+    #section-5 .img-3 {
+        position: absolute;
+        top: 47.5%;
+        left: 5.5vw;
+        width: 37%;
+        height: 40%;
+    }
 }
 
 /* min-width : 1024 */
-@media all and (min-width : 1024px) and (max-width : 1919px) {
+@media all and (min-width : 1024px) {
 
     /* nav */
     #bottom-nav .logo img {
@@ -357,6 +404,7 @@
     }
 
     /* section-4 */
+
     #section-4 .title-text {
         font-size: 45px;
     }
@@ -369,6 +417,10 @@
         width: 85vw;
         margin-top: 10vh;
         margin-bottom: 10vh;
+    }
+
+    #section-4 .products-container .products {
+        max-width: 1024px;
     }
 
     #section-4 .products-container .products div {
@@ -385,38 +437,7 @@
         width: 70%;
     }
 
-    #section-4 .imgs-container {
-        display: flex;
-        justify-content: center;
-    }
 
-    #section-4 .imgs-wrap {
-        position: relative;
-        display: block;
-        width: 80vw;
-        height: 120vh;
-    }
-
-    #section-4 .imgs-container img:nth-child(1) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 44%;
-    }
-
-    #section-4 .imgs-container img:nth-child(2) {
-        position: absolute;
-        top: 25vh;
-        right: 0;
-        width: 55%;
-    }
-
-    #section-4 .imgs-container img:nth-child(3) {
-        position: absolute;
-        top: 48vw;
-        left: 5.5vw;
-        width: 37%;
-    }
 }
 
 /* @media all and (min-width : 1920) {} */
