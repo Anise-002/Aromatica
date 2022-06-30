@@ -18,6 +18,13 @@ function setCanvasImage() {
         imgElem.src = scenInfo[3].obj.canvasImgpath[i];
         scenInfo[3].obj.imgs.push(imgElem);
     }
+    for (let i = 1; i < scenInfo[6].value.videoImgCount + 1; i++) {
+        imgElem = new Image();
+        if (i < 10) i = `00${i}`;
+        if (i >= 10 && i < 100) i = `0${i}`;
+        imgElem.src = `../video/2/${i}.jpg`;
+        scenInfo[6].obj.videoImg.push(imgElem);
+    }
 }
 
 
@@ -74,6 +81,7 @@ function setLayout() {
     const heightRatio = window.innerHeight / 1080;
     scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
     scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+    scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
 }
 
 setCanvasImage();

@@ -109,7 +109,9 @@ nav {
 #show-section-0 #section-0 .sticky-canvas,
 #show-section-1 #section-1 .sticky-elem,
 #show-section-2 #section-2 .sticky-elem,
-#show-section-3 #section-3 .sticky-elem {
+#show-section-3 #section-3 .sticky-elem,
+#show-section-6 #section-6 .sticky-canvas,
+#show-section-6 #section-6 .sticky-elem {
     display: block;
 }
 
@@ -478,15 +480,14 @@ nav {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    height: 100vh;
     padding-top: 0;
-    margin-top: 15vh;
-    margin-bottom: 10vh;
     overflow: visible;
 }
 
 #section-4 .products-container {
     width: 100vw;
-    /* height: 100%; */
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -597,5 +598,32 @@ nav {
 
 /* ------------- #section-6 */
 #section-6 {
-    background-color: #B48D62;
+    position: relative;
+    padding-top: 0;
+}
+
+#section-6 .sticky-canvas {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#section-6 .sticky-elem.text_a {
+    top: 45vh;
+}
+
+#section-6 .sticky-elem.text_b {
+    top: 45vh;
+}
+
+#section-6 .sticky-elem.text_c {
+    top: 45vh;
+}
+
+#section-6 .sticky-elem.text_d {
+    top: 45vh;
 }

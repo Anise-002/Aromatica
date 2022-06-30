@@ -153,7 +153,6 @@ const scenInfo = [
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-4'),
-
         },
     },
     {
@@ -169,11 +168,47 @@ const scenInfo = [
     {
         //6
         type: STICKY,
-        heightNum: 2,
+        heightNum: 7,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-6'),
+            messageA : document.querySelector('#section-6 .text_a'),
+            messageB : document.querySelector('#section-6 .text_b'),
+            messageC : document.querySelector('#section-6 .text_c'),
+            messageD : document.querySelector('#section-6 .text_d'),
+            canvas: document.querySelector('#video-canvas-2'),
+            context: document.querySelector("#video-canvas-2").getContext('2d'),
+            videoImg: [],
+
         },
+        value :{
+            videoImgCount : 458,
+            imageSequence : [0, 457],
+            canvas_opacity_in : [0 , 1, {start : 0, end : 0.1}],
+            canvas_opacity_out : [1 , 0, {start : 0.9, end : 1}],
+            //a
+            a_opacity_in: [0, 1, { start: 0.05, end: 0.15 }],
+            a_translateY_in: [100, 0, { start: 0.05, end: 0.15 }],
+            a_opacity_out: [1, 0, { start: 0.15, end: 0.2 }],
+            a_translateY_out: [0, -100, { start: 0.15, end: 0.2 }],
+            //b
+            b_opacity_in: [0, 1, { start: 0.2, end: 0.3 }],
+            b_translateY_in: [100, 0, { start: 0.2, end: 0.3 }],
+            b_opacity_out: [1, 0, { start: 0.3, end: 0.4 }],
+            b_translateY_out: [0, -100, { start: 0.3, end: 0.4 }],
+            //c
+            c_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
+            c_translateY_in: [100, 0, { start: 0.5, end: 0.6 }],
+            c_opacity_out: [1, 0, { start: 0.6,end: 0.7}],
+            c_translateY_out: [0, -100, { start:0.6, end:0.7 }],
+            //d
+            d_opacity_in: [0, 1, { start: 0.7, end: 0.8 }],
+            d_translateY_in: [-100, 0, { start: 0.7, end: 0.8 }],
+            d_opacity_out: [1, 0, { start: 0.8,end: 0.9}],
+            d_translateY_out: [0, -100, { start:0.8, end:0.9 }],
+
+            
+        }
     },
     {
         //7
