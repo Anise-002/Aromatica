@@ -627,3 +627,120 @@ nav {
 #section-6 .sticky-elem.text_d {
     top: 45vh;
 }
+
+/* ------------- #section-7 */
+#section-7 {
+    position: relative;
+    padding-top: 0vh;
+    width: 100vw;
+    height: 120vh;
+}
+
+#section-7 .svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+}
+
+#section-7 .svg-container object {
+    position: absolute;
+    height: 100%;
+    width: 130%;
+}
+
+#section-7 h2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 8vw;
+    margin-top: 15vh;
+    z-index: 1;
+}
+
+#section-7 h2 span {
+    display: block;
+    width: 40%;
+    margin-top: 15px;
+    font-size: 2vw;
+}
+
+#section-7 .img_dolpin_tool {
+    position: absolute;
+    top: 0;
+    right: -15%;
+    width: 80%;
+    z-index: -1;
+}
+
+#section-7 .imgs-contaniner {
+    position: relative;
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+}
+
+#section-7 .img_con img,
+#section-7 .img_dolpin_tool img {
+    width: 100%;
+}
+
+#section-7 .img_con {
+    position: absolute;
+    /* opacity: 0; */
+}
+
+#section-7 .img1 {
+    top: 10%;
+    left: 19%;
+    width: 33%;
+    min-width: 95px;
+    max-width: 135px;
+}
+
+#section-7 .img2 {
+    top: 24%;
+    left: 54%;
+    width: 35%;
+    min-width: 100px;
+    max-width: 160px;
+    max-width: 142px;
+}
+
+#section-7 .img3 {
+    top: 45%;
+    left: 9.5%;
+    width: 43%;
+    min-width: 123px;
+    max-width: 172px;
+}
+
+#section-7 .text-container {
+    position: absolute;
+    font-size: 1vw;
+
+}
+
+#section-7 .text-container.text1 {
+    top: 36%;
+    left: 6%;
+    width: 45%;
+    text-align: right;
+}
+
+#section-7 .text-container.text2 {
+    top: 56%;
+    left: 56%;
+    text-align: left;
+}
+
+#section-7 .text-container.text3 {
+    top: 80%;
+    left: 61%;
+    text-align: left;
+}
