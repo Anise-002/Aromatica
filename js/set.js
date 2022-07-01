@@ -60,7 +60,6 @@ function setLayout() {
             scenInfo[i].scrollHeight = scenInfo[i].obj.container.offsetHeight;
         }
         if (scenInfo[i].type === NORMAL) {
-            console.log(scenInfo[i].scrollHeight);
             scenInfo[i].scrollHeight = scenInfo[i].obj.container.offsetHeight;
         }
         scenInfo[i].obj.container.style.height = `${scenInfo[i].scrollHeight}px`;
@@ -79,9 +78,24 @@ function setLayout() {
     playAnimation();
     //canvas size 
     const heightRatio = window.innerHeight / 1080;
-    scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-    scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-    scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+    const widthRatio = window.innerWidth/1920;
+
+    if(window.innerWidth == 1280 && window.innerHeight == 800){
+        //Nest Hub Max 디바이스 대응 조건문
+        scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+    }else if(window.innerWidth > window.innerHeight){
+        //가로가 넓은 디바이스 대응
+        scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
+        scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
+        scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
+    }else {
+        //세로가 넓은 디바이스 대응
+        scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+    }
 }
 
 setCanvasImage();
