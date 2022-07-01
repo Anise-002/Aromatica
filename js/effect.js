@@ -244,19 +244,21 @@ function playAnimation() {
         break;
         
         case 5:
+            //scenInfo[7] canvas 초기 이미지 랜더링
+            scenInfo[6].obj.context.drawImage(scenInfo[6].obj.videoImg[0], 0, 0);
+            scenInfo[6].obj.canvasContainer.style.display = "block";
+            scenInfo[6].obj.canvasContainer.style.position = 'relative';
         break;
+
         case 6:
+            //canvas-container fixed
+            obj.canvasContainer.style.position = 'fixed';
+            obj.canvasContainer.style.top =0;
             //cavas image 랜더링
             let imageSequence =Math.floor(calcValue(value.imageSequence, currentYOffset));
             if(imageSequence < 0) imageSequence=0;
             if(imageSequence >value.imageSequence[1]) imageSequence = value.imageSequence[1];
             obj.context.drawImage(obj.videoImg[imageSequence], 0, 0);
-            //canvas opacity 
-            if(scrollRatio  < 0.8){
-                obj.canvas.style.opacity = calcValue(value.canvas_opacity_in,currentYOffset);
-            }// }else{
-            //     obj.canvas.style.opacity = calcValue(value.canvas_opacity_out,currentYOffset);
-            // }
             //a
             if(scrollRatio < 0.16){
                 obj.messageA.style.opacity = calcValue(value.a_opacity_in, currentYOffset);
@@ -289,16 +291,16 @@ function playAnimation() {
                 obj.messageD.style.opacity = calcValue(value.d_opacity_out, currentYOffset);
                 obj.messageD.style.transform = `translate3d(0,${calcValue(value.d_translateY_out, currentYOffset)}px, 0)`;
             }
-            //section 이동
+            //section 이동 설정
             if (scrollRatio > 0.85) {
                 const moveheight = (0.85 * scrollHeight);
                 obj.canvasContainer.style.position = 'relative';
                 obj.canvasContainer.style.top = `${moveheight}px`;
-            }else{
-                obj.canvasContainer.style.position = 'fixed';
-                obj.canvasContainer.style.top = 0;
             }
-
+        break;
+        case 7 :
+            //sceInfo[6] cavas 마지막 image 유지
+            scenInfo[6].obj.context.drawImage(scenInfo[6].obj.videoImg[scenInfo[6].obj.videoImg.length-1], 0, 0);
         break;
     }
 }

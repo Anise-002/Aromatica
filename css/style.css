@@ -603,7 +603,7 @@ nav {
 }
 
 #section-6 .sticky-canvas {
-    position: fixed;
+    position: relative;
     display: none;
     top: 0;
     left: 0;
@@ -626,6 +626,7 @@ nav {
 
 #section-6 .sticky-elem.text_d {
     top: 45vh;
+    font-size: 10vw;
 }
 
 /* ------------- #section-7 */

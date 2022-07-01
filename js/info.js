@@ -184,9 +184,7 @@ const scenInfo = [
         },
         value :{
             videoImgCount : 458,
-            imageSequence : [0, 457],
-            canvas_opacity_in : [0 , 1, {start : 0, end : 0.1}],
-            // canvas_opacity_out : [1 , 0, {start : 0.8, end : 0.9}],
+            imageSequence : [0, 457,{start : 0, end : 1}],
             //a
             a_opacity_in: [0, 1, { start: 0.05, end: 0.15 }],
             a_translateY_in: [100, 0, { start: 0.05, end: 0.15 }],
