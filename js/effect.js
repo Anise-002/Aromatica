@@ -241,7 +241,64 @@ function playAnimation() {
                 obj.canvasContainer.style.top = `${moveheight}px`;
 
             }
+        break;
+        
+        case 5:
+        break;
+        case 6:
+            //cavas image 랜더링
+            let imageSequence =Math.floor(calcValue(value.imageSequence, currentYOffset));
+            if(imageSequence < 0) imageSequence=0;
+            if(imageSequence >value.imageSequence[1]) imageSequence = value.imageSequence[1];
+            obj.context.drawImage(obj.videoImg[imageSequence], 0, 0);
+            //canvas opacity 
+            if(scrollRatio  < 0.8){
+                obj.canvas.style.opacity = calcValue(value.canvas_opacity_in,currentYOffset);
+            }// }else{
+            //     obj.canvas.style.opacity = calcValue(value.canvas_opacity_out,currentYOffset);
+            // }
+            //a
+            if(scrollRatio < 0.16){
+                obj.messageA.style.opacity = calcValue(value.a_opacity_in, currentYOffset);
+                obj.messageA.style.transform = `translate3d(0,${calcValue(value.a_translateY_in, currentYOffset)}px, 0)`;
+            }else{
+                obj.messageA.style.opacity = calcValue(value.a_opacity_out, currentYOffset);
+                obj.messageA.style.transform = `translate3d(0,${calcValue(value.a_translateY_out, currentYOffset)}px, 0)`;
+            }
+            //b
+            if(scrollRatio < 0.3){
+                obj.messageB.style.opacity = calcValue(value.b_opacity_in, currentYOffset);
+                obj.messageB.style.transform = `translate3d(0,${calcValue(value.b_translateY_in, currentYOffset)}px, 0)`;
+            }else{
+                obj.messageB.style.opacity = calcValue(value.b_opacity_out, currentYOffset);
+                obj.messageB.style.transform = `translate3d(0,${calcValue(value.b_translateY_out, currentYOffset)}px, 0)`;
+            }
+            //c
+            if(scrollRatio < 0.61){
+                obj.messageC.style.opacity = calcValue(value.c_opacity_in, currentYOffset);
+                obj.messageC.style.transform = `translate3d(0,${calcValue(value.c_translateY_in, currentYOffset)}px, 0)`;
+            }else{
+                obj.messageC.style.opacity = calcValue(value.c_opacity_out, currentYOffset);
+                obj.messageC.style.transform = `translate3d(0,${calcValue(value.c_translateY_out, currentYOffset)}px, 0)`;
+            }
+            //d
+            if(scrollRatio < 0.81){
+                obj.messageD.style.opacity = calcValue(value.d_opacity_in, currentYOffset);
+                obj.messageD.style.transform = `translate3d(0,${calcValue(value.d_translateY_in, currentYOffset)}px, 0)`;
+            }else{
+                obj.messageD.style.opacity = calcValue(value.d_opacity_out, currentYOffset);
+                obj.messageD.style.transform = `translate3d(0,${calcValue(value.d_translateY_out, currentYOffset)}px, 0)`;
+            }
+            //section 이동
+            if (scrollRatio > 0.85) {
+                const moveheight = (0.85 * scrollHeight);
+                obj.canvasContainer.style.position = 'relative';
+                obj.canvasContainer.style.top = `${moveheight}px`;
+            }else{
+                obj.canvasContainer.style.position = 'fixed';
+                obj.canvasContainer.style.top = 0;
+            }
 
-
+        break;
     }
 }

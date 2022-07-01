@@ -176,6 +176,7 @@ const scenInfo = [
             messageB : document.querySelector('#section-6 .text_b'),
             messageC : document.querySelector('#section-6 .text_c'),
             messageD : document.querySelector('#section-6 .text_d'),
+            canvasContainer : document.querySelector('#section-6 .sticky-canvas'),
             canvas: document.querySelector('#video-canvas-2'),
             context: document.querySelector("#video-canvas-2").getContext('2d'),
             videoImg: [],
@@ -185,7 +186,7 @@ const scenInfo = [
             videoImgCount : 458,
             imageSequence : [0, 457],
             canvas_opacity_in : [0 , 1, {start : 0, end : 0.1}],
-            canvas_opacity_out : [1 , 0, {start : 0.9, end : 1}],
+            // canvas_opacity_out : [1 , 0, {start : 0.8, end : 0.9}],
             //a
             a_opacity_in: [0, 1, { start: 0.05, end: 0.15 }],
             a_translateY_in: [100, 0, { start: 0.05, end: 0.15 }],
@@ -204,8 +205,8 @@ const scenInfo = [
             //d
             d_opacity_in: [0, 1, { start: 0.7, end: 0.8 }],
             d_translateY_in: [-100, 0, { start: 0.7, end: 0.8 }],
-            d_opacity_out: [1, 0, { start: 0.8,end: 0.9}],
-            d_translateY_out: [0, -100, { start:0.8, end:0.9 }],
+            d_opacity_out: [1, 0, { start: 0.8,end: 0.85}],
+            d_translateY_out: [0, -100, { start:0.8, end:0.85 }],
 
             
         }
