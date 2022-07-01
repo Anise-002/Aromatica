@@ -76,7 +76,7 @@ const scenInfo = [
     {
         //2
         type: STICKY,
-        heightNum: 3,
+        heightNum: 5,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-2'),
@@ -102,25 +102,26 @@ const scenInfo = [
             container_translateY: [],
             sectionPaddingTop: 50,
             paddingFixedTop: 40,
+            container_opacity_in: [0,1, {start : 0 , end : 0.2}],
             //leftContent
-            leftContent_opacity_in: [0, 1, { start: 0.12, end: 0.17 }],
-            leftContent_transformX_in: [-50, 0, { start: 0.12, end: 0.17 }],
-            left_horizon_line: [0, 0, { start: 0.05, end: 0.07 }],
-            left_vertical_line: [0, 0, { start: 0.07, end: 0.12 }],
+            leftContent_opacity_in: [0, 1, { start: 0.3, end: 0.4 }],
+            leftContent_transformX_in: [-50, 0, { start: 0.3, end: 0.4 }],
+            left_horizon_line: [0, 0, { start: 0.2, end: 0.25 }],
+            left_vertical_line: [0, 0, { start: 0.25, end: 0.3 }],
 
             //rightContent
-            rightContent_opacity_in: [0, 1, { start: 0.25, end: 0.3 }],
-            leftContent_transformY_in: [50, 0, { start: 0.25, end: 0.3 }],
-            right_horizon_line: [0, 14.7, { start: 0.2, end: 0.23 }],
-            right_vertical_line: [0, 8, { start: 0.23, end: 0.26 }],
+            rightContent_opacity_in: [0, 1, { start: 0.45, end: 0.55 }],
+            leftContent_transformY_in: [50, 0, { start: 0.45, end: 0.55 }],
+            right_horizon_line: [0, 14.7, { start: 0.35, end: 0.4 }],
+            right_vertical_line: [0, 8, { start: 0.4, end: 0.45 }],
 
             //conceptText
-            conceptText_opacity_in: [0, 1, { start: 0.3, end: 0.4 }],
-            conceptText_translateY_in: [50, 0, { start: 0.3, end: 0.4 }],
+            conceptText_opacity_in: [0, 1, { start: 0.55, end: 0.65 }],
+            conceptText_translateY_in: [50, 0, { start: 0.55, end: 0.65 }],
 
             //bottomContent
-            bottomContent_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
-            bottomContent_translateY_in: [50, 0, { start: 0.5, end: 0.6 }],
+            bottomContent_opacity_in: [0, 1, { start: 0.65, end: 0.75 }],
+            bottomContent_translateY_in: [50, 0, { start: 0.65, end: 0.75 }],
         }
     },
     {

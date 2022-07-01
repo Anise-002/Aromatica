@@ -80,7 +80,9 @@ function playAnimation() {
             obj.title.style.transform = `translate3d(0, ${calcValue(value.title_translateY_in, currentYOffset)}%,0)`;
             obj.subTitle.style.transform = `translate3d(0, ${calcValue(value.subTitle_translateY_in, currentYOffset)}%,0)`;
             obj.button.style.transform = `translate3d(-50%, ${calcValue(value.button_translateY_in, currentYOffset)}%,0)`;
-
+            
+            //scenInfo[2] - contContainer 효과 지정
+            scenInfo[2].obj.ContContainer.style.opacity = 0;
             break;
         case 2:
 
@@ -91,7 +93,8 @@ function playAnimation() {
             //fixed될때의 시작점 : 40vh의 px값을 구한 후 sectionheight의 비율을 구함
             const paddingPx = (innerHeight * fixedPadding / 100);
             //10vh의 px값 구하기
-            const moveStart = paddingPx + (value.bottomContent_opacity_in[2].end * scrollHeight);
+            const moveRatio =  0.8;
+            const moveStart = paddingPx + (moveRatio * scrollHeight);
             //fixed할떄의 padding의 값 + 지금까지 스크롤한 px값
 
 
@@ -99,12 +102,19 @@ function playAnimation() {
             obj.ContContainer.style.top = `${value.sectionPaddingTop}vh`;
             // obj.ContContainer.style.left = 0;
 
-            if (scrollRatio > fixedRatio && scrollRatio < value.bottomContent_opacity_in[2].end) {
+            if (scrollRatio > fixedRatio && scrollRatio < moveRatio) {
                 obj.ContContainer.classList.add(FIXED);
                 obj.ContContainer.style.top = `${fixedPadding}vh`;
-            } else if (scrollRatio >= value.bottomContent_opacity_in[2].end && scrollRatio < 1) {
+            } else if (scrollRatio >= moveRatio && scrollRatio < 1) {
                 obj.ContContainer.classList.remove(FIXED);
                 obj.ContContainer.style.top = `${moveStart}px`;
+            }
+
+            //canavas container effect
+            if(scrollRatio < 0.2){
+                obj.ContContainer.style.opacity = calcValue(value.container_opacity_in,currentYOffset);
+            }else{
+                obj.ContContainer.style.opacity = 1;
             }
 
             // 화면 너비에 따른 Horizon,Vertical width 지정 함수
@@ -187,6 +197,7 @@ function playAnimation() {
             } else {
                 obj.bottomContent.style.display = 'none';
             }
+            //sceInfo[3]cavanvasContainer 초기 image 설정
             scenInfo[3].obj.context.drawImage(scenInfo[3].obj.imgs[0], 0, 0);
             scenInfo[3].obj.canvasContainer.classList.remove(FIXED);
             break;
@@ -202,10 +213,8 @@ function playAnimation() {
             value.canvasblendImage[2].start = 0;
             value.canvasblendImage[2].end = 0.6;
             const blendHeight = calcValue(value.canvasblendImage, currentYOffset);
-            const heightRatio = window.innerHeight / 1080;
 
             //이미지 블랜딩
-            const textStartPoint = ((obj.canvas.width * heightRatio) - window.innerWidth) / 2;
             obj.context.drawImage(obj.imgs[0], 0, 0);
             obj.context.drawImage(obj.imgs[1],
                 0, 1500 - blendHeight, obj.canvas.width, blendHeight,
@@ -213,7 +222,6 @@ function playAnimation() {
             );
 
             //Text 블랜딩
-
             if (scrollRatio > 0 ) {
                 value.textContainer_Y[0] = obj.canvas.height;
                 value.textContainer_Y[1] = 0;
