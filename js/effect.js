@@ -29,10 +29,13 @@ function playAnimation() {
     const value = current.value;
     const scrollHeight = current.scrollHeight;
     const currentYOffset = YOffset - prevScrollHeight;
-    const scrollRatio = currentYOffset / scrollHeight;
+    let scrollRatio = currentYOffset / scrollHeight;
 
     const FIXED = "fixed";
 
+    //scrollRatio 예외처리
+    if(scrollRatio > 1) scrollRatio = 1;
+    if(scrollRatio < -0) scrollRatio = 0;
 
     switch (currentScene) {
         case 0:
@@ -85,7 +88,6 @@ function playAnimation() {
             scenInfo[2].obj.ContContainer.style.opacity = 0;
             break;
         case 2:
-
             const fixedPadding = (value.sectionPaddingTop - value.paddingFixedTop);
             //fixed될때 section의 padding-top의 값(50vh - 40vh) = 10vh;
             //fixed가 되길 원하는 시작점의 section padding-top(40vh)의 px값
@@ -96,7 +98,6 @@ function playAnimation() {
             const moveRatio =  0.8;
             const moveStart = paddingPx + (moveRatio * scrollHeight);
             //fixed할떄의 padding의 값 + 지금까지 스크롤한 px값
-
 
             obj.ContContainer.classList.remove(FIXED);
             obj.ContContainer.style.top = `${value.sectionPaddingTop}vh`;
@@ -158,9 +159,7 @@ function playAnimation() {
                 }else{
                     obj.leftHorizon.style.width = `${calcValue(value.left_horizon_line, currentYOffset)}vw`;
                     obj.leftVertical.style.width = `${calcValue(value.left_vertical_line, currentYOffset)}vw`;
-                }
-                
-                
+                }   
             } else {
                 obj.leftContainer.style.display = "none";
             }
@@ -203,10 +202,10 @@ function playAnimation() {
             break;
 
         case 3:
+            console.log(scrollRatio);
             //캔버스 설정
             obj.canvasContainer.classList.add(FIXED);
             obj.canvasContainer.style.top = `0px`;
-
             //캔버스 블랜딩 초기값 설정
             value.canvasblendImage[0] = 0;
             value.canvasblendImage[1] = 2000;
@@ -321,10 +320,10 @@ function playAnimation() {
             scenInfo[6].obj.context.drawImage(scenInfo[6].obj.videoImg[scenInfo[6].obj.videoImg.length-1], 0, 0);
             
             //conContainer fixed
-            obj.conContainer.classList.add(FIXED);
-            obj.conContainer.style.top = 0;
-            obj.conContainer.style.opacity = 1;
-            
+                obj.conContainer.classList.add(FIXED);
+                obj.conContainer.style.top = 0;
+                obj.conContainer.style.opacity = 1;
+
             //svg effect
             obj.svgPath.style.strokeDashoffset = calcValue(value.svgObjcet_draw, currentYOffset);
             //conContainer remove fixed
@@ -335,6 +334,7 @@ function playAnimation() {
             }else{
                 obj.conContainer.style.marginTop = 0;
             }
+
             //title
             obj.title.style.opacity = calcValue(value.title_opacity, currentYOffset);
             obj.title.style.transform = `translate3d(0,${calcValue(value.title_translateY, currentYOffset)}%,0)`;

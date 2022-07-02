@@ -179,7 +179,7 @@
     /* #section-5 */
     #section-5 {
         height: 100vh;
-        margin-bottom: 10vh;
+        padding-bottom: 10vh;
     }
 
     #section-5 .imgs-container {
