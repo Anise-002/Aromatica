@@ -206,18 +206,55 @@ const scenInfo = [
             d_translateY_in: [-100, 0, { start: 0.7, end: 0.8 }],
             d_opacity_out: [1, 0, { start: 0.8,end: 0.85}],
             d_translateY_out: [0, -100, { start:0.8, end:0.85 }],
-
             
         }
     },
     {
         //7
-        type: NORMAL,
-        heightNum: 2,
+        type: STICKY,
+        heightNum: 3,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-7'),
+            conContainer : document.querySelector('#section-7 .con-container'),
+            svg : document.querySelector('#section-7 .svg-container svg'),
+            svgPath : document.querySelector('#section-7 .svg-container svg path'),
+            dolpinTool : document.querySelector('#section-7 .img_dolpin_tool'),
+            title : document.querySelector('#section-7 h2'),
+            imageA : document.querySelector('#section-7 .img1'),
+            imageB : document.querySelector('#section-7 .img2'),
+            imageC : document.querySelector('#section-7 .img3'),
+            messageA : document.querySelector('#section-7 .text1'),
+            messageB : document.querySelector('#section-7 .text2'),
+            messageC : document.querySelector('#section-7 .text3'),
         },
+        value : {
+            svgObjcet_draw : [8098, 0, {start : 0, end : 0.8}],
+            //dolpinTool
+            dolpinTool_width : [200, 100, {start : 0.85, end : 1}],
+            dolpinTool_translateY : [-50, 0, {start : 0.85, end : 1}],
+            dolpinTool_translateX : [-50, 0, {start : 0.85, end : 1}],
+            dolpinTool_opacity : [0, 1, {start : 0.085, end : 1}],
+            dolpinTool_rotate : [0, 360, {start : 0.85, end : 1}],
+            //titie
+            title_opacity : [0, 1, {start : 0.08, end : 0.21}],
+            title_translateY : [20, 0, {start : 0.08, end : 0.21}],
+            //A
+            imageA_opacity : [0, 1, {start : 0.17, end : 0.3}],
+            imageA_translateY: [20, 0, {start : 0.17, end : 0.3}],
+            messageA_opacity : [0, 1, {start :0.3, end : 0.43}],
+            messageA_translateY: [20, 0, {start : 0.3, end : 0.43}],
+            //B
+            imageB_opacity : [0, 1, {start : 0.43, end : 0.56}],
+            imageB_translateY: [20, 0, {start : 0.43, end : 0.56}],
+            messageB_opacity : [0, 1, {start :0.56, end : 0.69}],
+            messageB_translateY: [20, 0, {start : 0.56, end : 0.69}],
+            //C
+            imageC_opacity : [0, 1, {start : 0.55, end : 0.68}],
+            imageC_translateY: [40, 0, {start : 0.55, end : 0.68}],
+            messageC_opacity : [0, 1, {start :0.68, end : 0.71}],
+            messageC_translateY: [40, 0, {start : 0.68, end : 0.71}],
+        }
     },
     {
         //8

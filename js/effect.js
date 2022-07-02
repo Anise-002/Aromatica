@@ -299,16 +299,70 @@ function playAnimation() {
                 obj.messageD.style.opacity = calcValue(value.d_opacity_out, currentYOffset);
                 obj.messageD.style.transform = `translate3d(0,${calcValue(value.d_translateY_out, currentYOffset)}px, 0)`;
             }
+
             //section 이동 설정
-            if (scrollRatio > 0.85) {
-                const moveheight = (0.85 * scrollHeight);
+            if (scrollRatio > 0.86) {
+                const moveheight = (0.86 * scrollHeight);
                 obj.canvasContainer.style.position = 'relative';
                 obj.canvasContainer.style.top = `${moveheight}px`;
             }
+
+            //scenInfo[7] conContianer effect
+            scenInfo[7].obj.conContainer.classList.remove(FIXED);
+            if(scrollRatio > 0.85){
+                scenInfo[7].obj.dolpinTool.style.transform = `translate3d(${calcValue(scenInfo[7].value.dolpinTool_translateX, currentYOffset)}%,${calcValue(scenInfo[7].value.dolpinTool_translateY, currentYOffset)}%,0) rotate(${calcValue(scenInfo[7].value.dolpinTool_rotate, currentYOffset)}deg)`;
+                scenInfo[7].obj.dolpinTool.style.width = `${calcValue(scenInfo[7].value.dolpinTool_width, currentYOffset)}%`;
+                scenInfo[7].obj.dolpinTool.style.opacity = `${calcValue(scenInfo[7].value.dolpinTool_opacity, currentYOffset)}`;
+            }
+           
         break;
         case 7 :
             //sceInfo[6] cavas 마지막 image 유지
             scenInfo[6].obj.context.drawImage(scenInfo[6].obj.videoImg[scenInfo[6].obj.videoImg.length-1], 0, 0);
-        break;
+            
+            //conContainer fixed
+            obj.conContainer.classList.add(FIXED);
+            obj.conContainer.style.top = 0;
+            obj.conContainer.style.opacity = 1;
+            
+            //svg effect
+            obj.svgPath.style.strokeDashoffset = calcValue(value.svgObjcet_draw, currentYOffset);
+            //conContainer remove fixed
+            const conContainerMoveStart = 0.6;
+            if(scrollRatio >= conContainerMoveStart){
+                obj.conContainer.classList.remove(FIXED);
+                obj.conContainer.style.top = `${conContainerMoveStart * scrollHeight}px`;
+            }else{
+                obj.conContainer.style.marginTop = 0;
+            }
+            //title
+            obj.title.style.opacity = calcValue(value.title_opacity, currentYOffset);
+            obj.title.style.transform = `translate3d(0,${calcValue(value.title_translateY, currentYOffset)}%,0)`;
+
+            //imageA
+            obj.imageA.style.opacity = calcValue(value.imageA_opacity, currentYOffset);
+            obj.imageA.style.transform = `translate3d(0,${calcValue(value.imageA_translateY, currentYOffset)}%,0)`;
+
+            //messageA
+            obj.messageA.style.opacity = calcValue(value.messageA_opacity, currentYOffset);
+            obj.messageA.style.transform = `translate3d(0,${calcValue(value.messageA_translateY, currentYOffset)}%,0)`;
+
+            //imageB
+            obj.imageB.style.opacity = calcValue(value.imageB_opacity, currentYOffset);
+            obj.imageB.style.transform = `translate3d(0,${calcValue(value.imageB_translateY, currentYOffset)}%,0)`;
+
+            //messageB
+            obj.messageB.style.opacity = calcValue(value.messageB_opacity, currentYOffset);
+            obj.messageB.style.transform = `translate3d(0,${calcValue(value.messageB_translateY, currentYOffset)}%,0)`;
+
+            //imageC
+            obj.imageC.style.opacity = calcValue(value.imageC_opacity, currentYOffset);
+            obj.imageC.style.transform = `translate3d(0,${calcValue(value.imageC_translateY, currentYOffset)}%,0)`;
+
+            //messageC
+            obj.messageC.style.opacity = calcValue(value.messageC_opacity, currentYOffset);
+            obj.messageC.style.transform = `translate3d(0,${calcValue(value.messageC_translateY, currentYOffset)}%,0)`;
+            
+            break;
     }
 }
