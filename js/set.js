@@ -84,17 +84,24 @@ function setLayout() {
         //Nest Hub Max 디바이스 대응 조건문
         scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
         scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[3].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
         scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[6].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
     }else if(window.innerWidth > window.innerHeight){
         //가로가 넓은 디바이스 대응
         scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
         scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
+        scenInfo[3].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
         scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
+        scenInfo[6].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
     }else {
         //세로가 넓은 디바이스 대응
         scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
         scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[3].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
         scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[6].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+
     }
 }
 

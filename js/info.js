@@ -76,7 +76,7 @@ const scenInfo = [
     {
         //2
         type: STICKY,
-        heightNum: 5,
+        heightNum: 6,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-2'),
@@ -102,7 +102,7 @@ const scenInfo = [
             container_translateY: [],
             sectionPaddingTop: 50,
             paddingFixedTop: 40,
-            container_opacity_in: [0,1, {start : 0 , end : 0.2}],
+            container_opacity_in: [0,1, {start : 0 , end : 0.25}],
             //leftContent
             leftContent_opacity_in: [0, 1, { start: 0.3, end: 0.4 }],
             leftContent_transformX_in: [-50, 0, { start: 0.3, end: 0.4 }],
@@ -127,7 +127,7 @@ const scenInfo = [
     {
         //3
         type: STICKY,
-        heightNum: 3,
+        heightNum: 4,
         scrollHeight: 0,
         imageCount: 2,
         obj: {
@@ -136,7 +136,9 @@ const scenInfo = [
             textContainer: document.querySelector('#section-3 .text-container'),
             canvasContainer: document.querySelector("#section-3 .sticky-canvas"),
             canvas: document.querySelector('#video-canvas-1'),
+            backgroundCanvas : document.querySelector('#background-1'),
             context: document.querySelector("#video-canvas-1").getContext('2d'),
+            backgroundContext : document.querySelector('#background-1').getContext('2d'),
             canvasImgpath: ["../img/2.jpg", "../img/3.jpg"],
             imgs: [],
 
@@ -178,7 +180,9 @@ const scenInfo = [
             messageC : document.querySelector('#section-6 .text_c'),
             messageD : document.querySelector('#section-6 .text_d'),
             canvasContainer : document.querySelector('#section-6 .sticky-canvas'),
+            backgroundCanvas : document.querySelector('#background-2'),
             canvas: document.querySelector('#video-canvas-2'),
+            backgroundContext : document.querySelector('#background-2').getContext('2d'),
             context: document.querySelector("#video-canvas-2").getContext('2d'),
             videoImg: [],
 
@@ -186,6 +190,7 @@ const scenInfo = [
         value :{
             videoImgCount : 405,
             imageSequence : [0, 404,{start : 0, end : 1}],
+            canvas_opacity : [1, 0,{start : 0.7, end : 0.9}],
             //a
             a_opacity_in: [0, 1, { start: 0.05, end: 0.15 }],
             a_translateY_in: [100, 0, { start: 0.05, end: 0.15 }],

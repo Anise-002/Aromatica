@@ -3,6 +3,8 @@
 html {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 14px;
+    min-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
@@ -105,10 +107,35 @@ nav {
     opacity: 0;
 }
 
+.sticky-canvas {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-canvas {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.back-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+
 #show-section-0 #section-0 .sticky-elem,
 #show-section-0 #section-0 .sticky-canvas,
 #show-section-1 #section-1 .sticky-elem,
 #show-section-2 #section-2 .sticky-elem,
+#show-section-3 #section-3 .sticky-canvas,
 #show-section-3 #section-3 .sticky-elem,
 #show-section-6 #section-6 .sticky-canvas,
 #show-section-6 #section-6 .sticky-elem {
@@ -430,15 +457,10 @@ nav {
 }
 
 #section-3 .sticky-canvas {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-}
-
-#section-3 .sticky-canvas.fixed {
-    position: fixed;
 }
 
 #section-3 .text-container {
@@ -480,17 +502,17 @@ nav {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    height: 100vh;
     padding-top: 0;
     overflow: visible;
 }
 
 #section-4 .products-container {
     width: 100vw;
-    height: 80%;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10vh;
 }
 
 #section-4 .title-text {
@@ -603,10 +625,6 @@ nav {
 }
 
 #section-6 .sticky-canvas {
-    position: relative;
-    display: none;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
     overflow: hidden;

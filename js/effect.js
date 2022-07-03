@@ -1,16 +1,15 @@
 function calcValue(value, currentYOffset) {
     let rv;
     const scrollHeight = scenInfo[currentScene].scrollHeight;
-    const scrollRatio = currentYOffset / scrollHeight;   //섹션을 기준으로 한 yoffsest값 
+    const scrollRatio = currentYOffset / scrollHeight;
 
     if (value.length === 3) {
         const start = value[2].start * scrollHeight;
         const end = value[2].end * scrollHeight;
         const playPart = end - start;
-        const partRatio = (currentYOffset - start) / playPart;  //움직이고자 하는 부분의 yoffset값의 비율
+        const partRatio = (currentYOffset - start) / playPart;  
 
         if (currentYOffset >= start && currentYOffset <= end) {
-            //움직이고자 하는 영역을 기준으로 한 yoffset의 비율
             rv = partRatio * (value[1] - value[0]) + value[0];
         } else if (currentYOffset < start) {
             rv = value[0];
@@ -30,6 +29,7 @@ function playAnimation() {
     const scrollHeight = current.scrollHeight;
     const currentYOffset = YOffset - prevScrollHeight;
     let scrollRatio = currentYOffset / scrollHeight;
+    let moveStartPoint;
 
     const FIXED = "fixed";
 
@@ -88,21 +88,17 @@ function playAnimation() {
             scenInfo[2].obj.ContContainer.style.opacity = 0;
             break;
         case 2:
+            //스클로한 값 px로 변환
             const fixedPadding = (value.sectionPaddingTop - value.paddingFixedTop);
-            //fixed될때 section의 padding-top의 값(50vh - 40vh) = 10vh;
-            //fixed가 되길 원하는 시작점의 section padding-top(40vh)의 px값
             const fixedRatio = (innerHeight * value.paddingFixedTop / 100) / scrollHeight;
-            //fixed될때의 시작점 : 40vh의 px값을 구한 후 sectionheight의 비율을 구함
             const paddingPx = (innerHeight * fixedPadding / 100);
-            //10vh의 px값 구하기
             const moveRatio =  0.8;
             const moveStart = paddingPx + (moveRatio * scrollHeight);
-            //fixed할떄의 padding의 값 + 지금까지 스크롤한 px값
 
             obj.ContContainer.classList.remove(FIXED);
             obj.ContContainer.style.top = `${value.sectionPaddingTop}vh`;
-            // obj.ContContainer.style.left = 0;
 
+            //ContContainer positon 변경 조건
             if (scrollRatio > fixedRatio && scrollRatio < moveRatio) {
                 obj.ContContainer.classList.add(FIXED);
                 obj.ContContainer.style.top = `${fixedPadding}vh`;
@@ -147,9 +143,8 @@ function playAnimation() {
             };
             setLineWidth();
 
-
             //leftContent
-            if (scrollRatio > 0.1) {
+            if (scrollRatio > 0.15) {
                 obj.leftContainer.style.display = "block";
                 obj.leftContent.style.opacity = calcValue(value.leftContent_opacity_in, currentYOffset);
                 obj.leftContent.style.transform = `translate3d( ${calcValue(value.leftContent_transformX_in, currentYOffset)}%,0, 0)`;
@@ -164,7 +159,7 @@ function playAnimation() {
                 obj.leftContainer.style.display = "none";
             }
 
-            if (scrollRatio > 0.2) {
+            if (scrollRatio > 0.3) {
                 obj.rightContainer.style.display = "block";
                 //rightContent
                 obj.rightContent.style.opacity = calcValue(value.rightContent_opacity_in, currentYOffset);
@@ -197,20 +192,15 @@ function playAnimation() {
                 obj.bottomContent.style.display = 'none';
             }
             //sceInfo[3]cavanvasContainer 초기 image 설정
-            scenInfo[3].obj.context.drawImage(scenInfo[3].obj.imgs[0], 0, 0);
-            scenInfo[3].obj.canvasContainer.classList.remove(FIXED);
+            scenInfo[3].obj.backgroundContext.drawImage(scenInfo[3].obj.imgs[0], 0, 0);
             break;
 
         case 3:
-            console.log(scrollRatio);
-            //캔버스 설정
-            obj.canvasContainer.classList.add(FIXED);
-            obj.canvasContainer.style.top = `0px`;
             //캔버스 블랜딩 초기값 설정
             value.canvasblendImage[0] = 0;
             value.canvasblendImage[1] = 2000;
             value.canvasblendImage[2].start = 0;
-            value.canvasblendImage[2].end = 0.6;
+            value.canvasblendImage[2].end = 0.7;
             const blendHeight = calcValue(value.canvasblendImage, currentYOffset);
 
             //이미지 블랜딩
@@ -238,34 +228,32 @@ function playAnimation() {
                 obj.context.fillRect(
                     obj.canvas.width / 2, obj.canvas.height - blendHeight, obj.canvas.width / 2, blendHeight
                 )
-
             }
 
-            //블랜딩 후
-            if (scrollRatio > value.canvasblendImage[2].end + 0.05) {
-                const moveheight = `${(value.canvasblendImage[2].end + 0.05) * scrollHeight}`;
-                obj.canvasContainer.classList.remove(FIXED);
+            //canvas position 변경 조건
+            moveStartPoint = value.textContainer_Y[2].end + 0.05;
+            if(scrollRatio > 0 && scrollRatio < moveStartPoint){
+                obj.canvasContainer.style.position = 'fixed';
+                obj.canvasContainer.style.top = 0;
+            }else if (scrollRatio >= moveStartPoint) {
+                const moveheight = moveStartPoint * scrollHeight;
+                obj.canvasContainer.style.position = 'absolute';
                 obj.canvasContainer.style.top = `${moveheight}px`;
-
             }
         break;
         
         case 5:
             //scenInfo[7] canvas 초기 이미지 랜더링
-            scenInfo[6].obj.context.drawImage(scenInfo[6].obj.videoImg[0], 0, 0);
-            scenInfo[6].obj.canvasContainer.style.display = "block";
-            scenInfo[6].obj.canvasContainer.style.position = 'relative';
+            scenInfo[6].obj.backgroundContext.drawImage(scenInfo[6].obj.videoImg[0], 0, 0);
         break;
 
         case 6:
-            //canvas-container fixed
-            obj.canvasContainer.style.position = 'fixed';
-            obj.canvasContainer.style.top =0;
             //cavas image 랜더링
             let imageSequence =Math.floor(calcValue(value.imageSequence, currentYOffset));
             if(imageSequence < 0) imageSequence=0;
             if(imageSequence >value.imageSequence[1]) imageSequence = value.imageSequence[1];
             obj.context.drawImage(obj.videoImg[imageSequence], 0, 0);
+            
             //a
             if(scrollRatio < 0.16){
                 obj.messageA.style.opacity = calcValue(value.a_opacity_in, currentYOffset);
@@ -299,11 +287,12 @@ function playAnimation() {
                 obj.messageD.style.transform = `translate3d(0,${calcValue(value.d_translateY_out, currentYOffset)}px, 0)`;
             }
 
-            //section 이동 설정
-            if (scrollRatio > 0.86) {
-                const moveheight = (0.86 * scrollHeight);
-                obj.canvasContainer.style.position = 'relative';
-                obj.canvasContainer.style.top = `${moveheight}px`;
+            //canvas position 변경 조건
+            moveStartPoint = 0.8;
+            if(scrollRatio > 0 && scrollRatio < moveStartPoint){
+                obj.canvasContainer.style.opacity = 1;
+            }else if (scrollRatio >= moveStartPoint) {
+                obj.canvasContainer.style.opacity = calcValue(value.canvas_opacity, currentYOffset);
             }
 
             //scenInfo[7] conContianer effect
@@ -326,13 +315,14 @@ function playAnimation() {
 
             //svg effect
             obj.svgPath.style.strokeDashoffset = calcValue(value.svgObjcet_draw, currentYOffset);
+            
             //conContainer remove fixed
             const conContainerMoveStart = 0.6;
             if(scrollRatio >= conContainerMoveStart){
                 obj.conContainer.classList.remove(FIXED);
                 obj.conContainer.style.top = `${conContainerMoveStart * scrollHeight}px`;
             }else{
-                obj.conContainer.style.marginTop = 0;
+                obj.conContainer.style.top = 0;
             }
 
             //title
