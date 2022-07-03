@@ -297,14 +297,28 @@ function playAnimation() {
 
             //scenInfo[7] conContianer effect
             scenInfo[7].obj.conContainer.classList.remove(FIXED);
+            if(innerWidth >= 1024){
+                scenInfo[7].value.dolpinTool_width[0] = 100;
+                scenInfo[7].value.dolpinTool_width[1] = 60;
+            }else if(innerWidth >= 1920){
+                scenInfo[7].value.dolpinTool_width[0] = 300;
+                scenInfo[7].value.dolpinTool_width[1] = 90;
+            }else{
+                scenInfo[7].value.dolpinTool_width[0] = 100;
+                scenInfo[7].value.dolpinTool_width[1] = 90;
+            }
             if(scrollRatio > 0.85){
-                scenInfo[7].obj.dolpinTool.style.transform = `translate3d(${calcValue(scenInfo[7].value.dolpinTool_translateX, currentYOffset)}%,${calcValue(scenInfo[7].value.dolpinTool_translateY, currentYOffset)}%,0) rotate(${calcValue(scenInfo[7].value.dolpinTool_rotate, currentYOffset)}deg)`;
-                scenInfo[7].obj.dolpinTool.style.width = `${calcValue(scenInfo[7].value.dolpinTool_width, currentYOffset)}%`;
+                scenInfo[7].obj.dolpinTool.style.transform = `translate3d(${calcValue(scenInfo[7].value.dolpinTool_translateX, currentYOffset)}vw,${calcValue(scenInfo[7].value.dolpinTool_translateY, currentYOffset)}vw,0) rotate(${calcValue(scenInfo[7].value.dolpinTool_rotate, currentYOffset)}deg)`;
+                scenInfo[7].obj.dolpinTool.style.width = `${calcValue(scenInfo[7].value.dolpinTool_width, currentYOffset)}vw`;
                 scenInfo[7].obj.dolpinTool.style.opacity = `${calcValue(scenInfo[7].value.dolpinTool_opacity, currentYOffset)}`;
             }
            
         break;
         case 7 :
+            console.log(scrollRatio)
+            if(scrollRatio >= 0){
+                scenInfo[6].obj.container.style.opacity = 0;
+            }
             //sceInfo[6] cavas 마지막 image 유지
             scenInfo[6].obj.context.drawImage(scenInfo[6].obj.videoImg[scenInfo[6].obj.videoImg.length-1], 0, 0);
             
@@ -317,12 +331,21 @@ function playAnimation() {
             obj.svgPath.style.strokeDashoffset = calcValue(value.svgObjcet_draw, currentYOffset);
             
             //conContainer remove fixed
-            const conContainerMoveStart = 0.6;
+            let conContainerMoveStart;
+            if(innerWidth < 1024){
+                conContainerMoveStart= 0.6;
+                moveStartPoint = 0.6;
+
+            }else{
+                conContainerMoveStart= 0.36;
+                moveStartPoint = conContainerMoveStart-0.03;
+            }
             if(scrollRatio >= conContainerMoveStart){
                 obj.conContainer.classList.remove(FIXED);
-                obj.conContainer.style.top = `${conContainerMoveStart * scrollHeight}px`;
+                obj.conContainer.style.marginTop = `${(moveStartPoint)* scrollHeight}px`;
+            console.log(conContainerMoveStart);
             }else{
-                obj.conContainer.style.top = 0;
+                obj.conContainer.style.marginTop = 0;
             }
 
             //title

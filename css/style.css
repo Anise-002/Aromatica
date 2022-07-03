@@ -654,6 +654,7 @@ nav {
     position: relative;
     padding-top: 0vh;
     width: 100vw;
+    overflow: visible;
 }
 
 #section-7 .opacity-elem {
@@ -741,25 +742,18 @@ nav {
     top: 10%;
     left: 19%;
     width: 33%;
-    min-width: 95px;
-    max-width: 135px;
 }
 
 #section-7 .img2 {
     top: 24%;
     left: 54%;
     width: 35%;
-    min-width: 100px;
-    max-width: 160px;
-    max-width: 142px;
 }
 
 #section-7 .img3 {
     top: 45%;
     left: 9.5%;
     width: 43%;
-    min-width: 123px;
-    max-width: 172px;
 }
 
 #section-7 .text-container {
@@ -769,15 +763,16 @@ nav {
 }
 
 #section-7 .text-container.text1 {
-    top: 36%;
-    left: 6%;
-    width: 45%;
+    bottom: -35%;
+    right: 0;
+    width: 130%;
     text-align: right;
 }
 
 #section-7 .text-container.text2 {
-    top: 56%;
-    left: 56%;
+    bottom: -50%;
+    left: 0;
+    width: 120%;
     text-align: left;
 }
 

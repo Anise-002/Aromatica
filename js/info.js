@@ -236,10 +236,10 @@ const scenInfo = [
         value : {
             svgObjcet_draw : [8098, 0, {start : 0, end : 0.8}],
             //dolpinTool
-            dolpinTool_width : [200, 100, {start : 0.85, end : 1}],
+            dolpinTool_width : [0, 0, {start : 0.85, end : 1}],
             dolpinTool_translateY : [-50, 0, {start : 0.85, end : 1}],
             dolpinTool_translateX : [-50, 0, {start : 0.85, end : 1}],
-            dolpinTool_opacity : [0, 1, {start : 0.085, end : 1}],
+            dolpinTool_opacity : [0, 1, {start : 0.9, end : 1}],
             dolpinTool_rotate : [0, 360, {start : 0.85, end : 1}],
             //titie
             title_opacity : [0, 1, {start : 0.08, end : 0.21}],

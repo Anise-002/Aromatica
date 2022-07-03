@@ -54,6 +54,11 @@ function setCurrentNum() {
 function setLayout() {
     for (let i = 0; i < scenInfo.length; i++) {
         if (scenInfo[i].type === STICKY) {
+            if(window.innerWidth >= 1024){
+                scenInfo[7].heightNum = 3.5;
+            }else{
+                scenInfo[7].heightNum = 3;
+            }
             scenInfo[i].scrollHeight = scenInfo[i].heightNum * window.innerHeight;
         }
         if (scenInfo[i].type === FULLHEIGHT) {
