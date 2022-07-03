@@ -290,9 +290,9 @@ function playAnimation() {
             //canvas position 변경 조건
             moveStartPoint = 0.8;
             if(scrollRatio > 0 && scrollRatio < moveStartPoint){
-                obj.canvasContainer.style.opacity = 1;
+                obj.container.style.opacity = 1;
             }else if (scrollRatio >= moveStartPoint) {
-                obj.canvasContainer.style.opacity = calcValue(value.canvas_opacity, currentYOffset);
+                obj.container.style.opacity = calcValue(value.canvas_opacity, currentYOffset);
             }
 
             //scenInfo[7] conContianer effect

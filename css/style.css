@@ -454,6 +454,7 @@ nav {
     position: relative;
     width: 100vw;
     padding-top: 0;
+    background-image: url(./../img/2.jpg);
 }
 
 #section-3 .sticky-canvas {
@@ -622,6 +623,7 @@ nav {
 #section-6 {
     position: relative;
     padding-top: 0;
+    background-image: url(./../video/2/001.jpg);
 }
 
 #section-6 .sticky-canvas {
