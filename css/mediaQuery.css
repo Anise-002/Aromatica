@@ -143,37 +143,48 @@
 
     /* section-4 */
     #section-4 {
-        justify-content: center
+        justify-content: center;
     }
 
     #section-4 .title-text {
         font-size: 5vw;
+        margin-top: 10vh;
+        margin-bottom: 5vh;
+    }
+
+    #section-4 .title-text span {
+        /* padding-top: 10vh; */
+        margin: 0 auto;
     }
 
     #section-4 .products-container {
         width: 100%;
+        margin-bottom: 10vh;
     }
 
     #section-4 .products-container .products {
-        max-width: 80vw;
+        max-width: 90vw;
+        justify-content: center;
     }
 
     #section-4 .products-container .products div {
-        width: 25%;
+        width: 40%;
+        padding-top: 3vh;
     }
 
     #section-4 .products-container .products div p {
-        font-size: 1.5vw;
+        font-size: 2vw;
         margin-top: 1vh;
     }
 
     #section-4 .products-container .products div img {
-        width: 70%;
+        width: 55%;
     }
 
     .buy-button {
-        width: 100%;
-        font-size: 10px;
+        width: 80%;
+        padding: 5% 10%;
+        font-size: 14px;
     }
 
     /* #section-5 */
@@ -186,6 +197,7 @@
         position: relative;
         display: flex;
         justify-content: center;
+        align-items: start;
         height: 100%;
     }
 
@@ -298,104 +310,118 @@
     }
 
     /* nav */
+    nav ul {
+        max-width: 1440px;
+    }
+
     #bottom-nav .logo img {
         width: 200px;
     }
 
     /* #section-0 */
     #section-0 h1 {
-        font-size: 75px;
+        font-size: 8vw;
+        letter-spacing: 1vw;
     }
 
     .main-text {
-        font-size: 65px;
+        font-size: 5vw
     }
 
     #section-0 .a {
         width: 100%;
         top: 53vh;
         text-align: right;
-
     }
 
     #section-0 .a p {
-        font-size: 65px;
+        font-size: 6vw;
     }
 
     #section-0 .d {
         padding: 0 5vw;
-        font-size: 55px;
+        font-size: 4vw;
         top: 50vh;
     }
 
     /* #section-1 */
+
     .title-text {
-        font-size: 45px;
+        font-size: 3vw;
+    }
+
+    #section-1 .sticky-elem.a {
+        top: 38%
     }
 
     #section-1 .sticky-elem.b {
-        top: 40%;
-        font-size: 35px;
+        top: 50%;
+        font-size: 2.5vw;
     }
 
     #section-1 .sticky-elem.b span {
         position: relative;
-        left: 50%;
-        transform: translate(-50%);
         display: block;
-        width: 70%;
+        padding: 0 10vw;
     }
 
     #section-1 .sticky-elem.c {
-        top: 45%;
+        top: 56%;
     }
 
     #section-1 .button {
-        width: 35vw;
-        max-width: 500px;
-        font-size: 18px;
+        width: 45vw;
+        padding: 1.5vw 10vw;
+        font-size: 1.5vw;
     }
 
     /* #section - 2 */
     #section-2 .title-text {
-        font-size: 43px;
+        font-size: 2.5vw;
+        margin-top: 3vh;
     }
 
     #section-2 .title-text .sub-title {
-        font-size: 24px;
+        font-size: 1.5vw;
     }
 
     #section-2 .main-img-container {
         max-width: 920px;
-        left: 50%;
-        transform: translateX(-50%);
-
+        margin: 0 auto;
     }
 
     #section-2 .main-img {
         display: inline-block;
-        width: 170px;
+        width: 11vw;
+        max-width: 170px;
         margin-top: 5vh;
     }
 
     #section-2 .lavender-left {
-        width: 170px;
-        height: 170px;
-        left: 270px;
+        width: 10vw;
+        height: 10vw;
+        max-width: 170px;
+        max-height: 170px;
+        top: 240px;
+        left: 30%;
     }
 
     #section-2 .lavender-left .circle {
-        width: 170px;
-        height: 170px;
+        width: 10vw;
+        height: 10vw;
+        max-width: 170px;
+        max-height: 170px;
         top: 1vw;
         left: 0vw;
     }
 
     #section-2 .sweet-right {
-        width: 200px;
-        height: 200px;
+        width: 13vw;
+        height: 13vw;
+        max-width: 200px;
+        max-height: 200px;
         top: 50px;
-        right: 270px;
+        right: 31%;
     }
 
     #section-2 .sweet-right img {
@@ -404,36 +430,38 @@
     }
 
     #section-2 .sweet-right .circle {
-        width: 170px;
-        height: 170px;
+        width: 10vw;
+        height: 10vw;
+        max-width: 170px;
+        max-height: 170px;
         top: 2vw;
-        left: 3vw;
+        left: 2.5vw;
     }
 
     #section-2 .sub-text p {
-        width: 250px;
-        font-size: 13px;
+        max-width: 250px;
+        font-size: 1vw;
     }
 
     #section-2 .left-text {
-        top: 200px;
-        left: 110px;
+        top: 170px;
+        left: 121px;
     }
 
     #section-2 .left-text span.horizon {
         position: absolute;
-        top: -70px;
-        right: -57px;
+        top: -55px;
+        right: -59px;
     }
 
     #section-2 .left-text span.vertical {
         left: 113px;
-        top: -70.5px;
+        top: -54px;
     }
 
     #section-2 .right-text {
-        bottom: 40px;
-        right: 106px;
+        bottom: 17px;
+        right: 118px;
     }
 
     #section-2 .right-text span.horizon {
@@ -449,14 +477,13 @@
     }
 
     #section-2 .bottom-content-text {
-        font-size: 18px;
+        font-size: 1vw;
     }
 
     #section-2 .bottom-content-text span {
         position: relative;
         display: block;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: 0 auto;
         max-width: 1300px;
 
     }
@@ -470,17 +497,17 @@
     }
 
     #section-3 .text-container h2 {
-        font-size: 40px;
+        font-size: 3.5vw
     }
 
     #section-3 .text-container h2 span {
-        font-size: 24px;
+        font-size: 1.5vw;
     }
 
     /* section-4 */
 
     #section-4 .title-text {
-        font-size: 45px;
+        font-size: 3vw;
     }
 
     #section-4 .title-text span {
@@ -489,23 +516,22 @@
 
     #section-4 .products-container {
         width: 85vw;
-        padding-top: 10vh;
-        padding-bottom: 10vh;
-        /* margin-top: 10vh;
-        margin-bottom: 10vh; */
+        margin-top: 10vh;
+        margin-bottom: 10vh;
     }
 
     #section-4 .products-container .products {
         max-width: 90vw;
+        flex-wrap: nowrap;
     }
 
     #section-4 .products-container .products div {
-        width: 25%;
-        margin-top: 5vh;
+        width: 35%;
+        margin: 5vh 0 0;
     }
 
     #section-4 .products-container .products div p {
-        font-size: 1.5vw;
+        font-size: 1.8vw;
         margin-top: 1vh;
     }
 
@@ -519,16 +545,12 @@
     }
 
     /* #section-5 */
-    #section-5 {
-        height: 120vh;
-        margin-bottom: 10vh;
-    }
-
     #section-5 .imgs-container {
         position: relative;
         display: flex;
         justify-content: center;
-        height: 100%;
+        height: 150vh;
+        margin: 10vh 0;
     }
 
     #section-5 .imgs-container .imgs-wrap {
@@ -666,6 +688,43 @@
 }
 
 @media all and (min-width : 1920px) {
+    #section-2 .sub-text p {
+        max-width: 250px;
+        font-size: 14px;
+    }
+
+    #section-2 .left-text {
+        top: 162px;
+        left: 119px
+    }
+
+    #section-2 .right-text {
+        bottom: 17px;
+        right: 93px;
+    }
+
+    #section-2 .lavender-left {
+        top: 280px;
+        left: 260px;
+    }
+
+    #section-2 .sweet-right {
+        top: 50px;
+        right: 276px;
+    }
+
+    #section-2 .sweet-right .circle {
+        left: 2vw
+    }
+
+    #section-2 .concept-text-container {
+        font-size: 20px;
+    }
+
+    #section-2 .bottom-content-text {
+        font-size: 16px;
+    }
+
     #section-7 h2 {
         width: 80vw;
         margin: 15vh auto 0;

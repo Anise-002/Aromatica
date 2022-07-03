@@ -215,6 +215,7 @@ nav {
 #section-1 {
     height: 130vh;
     padding-top: 30vh;
+    z-index: 5;
 }
 
 .title-text {
@@ -248,6 +249,7 @@ nav {
     font-size: 3vw;
     margin-top: 3vh;
     transition: hover 0.3s;
+    z-index: 10;
 }
 
 #section-1 .button:hover {
@@ -509,22 +511,18 @@ nav {
 
 #section-4 .products-container {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 10vh;
 }
 
 #section-4 .title-text {
     position: relative;
-    width: 100%;
+    margin: 5vh auto;
 }
 
 #section-4 .title-text span {
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     display: block;
     max-width: 70vw;
 }
@@ -533,16 +531,15 @@ nav {
 #section-4 .products-container .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 7vh 0 8vh;
+    justify-content: center;
     max-width: 380px;
-
+    margin-bottom: 10vh;
 }
 
 #section-4 .products-container .products div {
     width: 35%;
     padding: 0 3vw;
-    margin-bottom: 5vh;
+    margin: 0 3vw 3vh;
     text-align: center;
 }
 
@@ -571,20 +568,20 @@ nav {
 }
 
 .buy-button:hover {
-    background-color: #B48D62;
+    background-color: black;
     color: aliceblue;
     border: 1px solid white;
+    padding: 1vw;
 }
 
 /* #section -5  */
 #section-5 {
     padding-top: 0;
-    height: 100vh;
 }
 
 #section-5 .imgs-container {
     width: 100vw;
-    height: 100%;
+    height: 100vh;
 }
 
 #section-5 .imgs-wrap {

@@ -89,6 +89,7 @@ function playAnimation() {
             break;
         case 2:
             //스클로한 값 px로 변환
+            if(window.innerWidth >= 1024) value.paddingFixedTop = 43;
             const fixedPadding = (value.sectionPaddingTop - value.paddingFixedTop);
             const fixedRatio = (innerHeight * value.paddingFixedTop / 100) / scrollHeight;
             const paddingPx = (innerHeight * fixedPadding / 100);
