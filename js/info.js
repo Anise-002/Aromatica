@@ -281,7 +281,8 @@ const scenInfo = [
         },
         value : {
             canvasblendImage: [0, 0, { start: 0, end: 0}],
-            textContainer_Y : [120, 0, {start : 0, end : 0}],
+            textContainer_Y : [50, 0, {start : 0, end : 0}],
+            textContainer_opacity :[0,1, {start : 0, end : 0}]
         }
     },
     {

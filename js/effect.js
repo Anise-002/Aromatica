@@ -410,17 +410,19 @@ function playAnimation() {
 
                 //이미지 블랜딩
                 value.canvasblendImage[0] = obj.canvas.height;
-                value.canvasblendImage[2].end = 0.4;
+                value.canvasblendImage[2].end = 0.5;
                 const blendHeight_8 = calcValue(value.canvasblendImage,currentYOffset);
                 obj.context.drawImage(obj.imgs[obj.imgs.length-1],
                     0, blendHeight_8 , obj.imgs[obj.imgs.length-1].width,  obj.imgs[obj.imgs.length-1].height - blendHeight_8,
                     0, blendHeight_8, obj.canvas.width, obj.imgs[obj.imgs.length-1].height - blendHeight_8 );
                 
                 //text  블랜딩
-                value.textContainer_Y[2].start = value.canvasblendImage[2].end;
-                value.textContainer_Y[2].end = value.canvasblendImage[2].end + 0.3;
+                value.textContainer_Y[2].start = value.canvasblendImage[2].end /2;
+                value.textContainer_Y[2].end = value.canvasblendImage[2].end;
+                value.textContainer_opacity[2].start = value.textContainer_Y[2].start;
+                value.textContainer_opacity[2].end = value.textContainer_Y[2].end;
                 obj.textContainer.style.marginTop = `${calcValue(value.textContainer_Y, currentYOffset)}%`;
-
+                obj.textContainer.style.opacity = calcValue(value.textContainer_opacity,currentYOffset);
                 console.log(scrollRatio);
                 //블랜딩 완료 후
                 if(scrollRatio >= 0.8){

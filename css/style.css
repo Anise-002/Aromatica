@@ -801,6 +801,7 @@ nav {
     text-align: center;
     font-size: 7.5vw;
     color: white;
+    opacity: 0;
 }
 
 #section-8 .text-container.fixed {
@@ -808,5 +809,5 @@ nav {
 }
 
 #section-9 {
-    background-color: aquamarine;
+    background-color: #112B23;
 }
