@@ -138,7 +138,9 @@ nav {
 #show-section-3 #section-3 .sticky-canvas,
 #show-section-3 #section-3 .sticky-elem,
 #show-section-6 #section-6 .sticky-canvas,
-#show-section-6 #section-6 .sticky-elem {
+#show-section-6 #section-6 .sticky-elem,
+#show-section-8 #section-8 .sticky-canvas,
+#show-section-8 #section-8 .sticky-elem {
     display: block;
 }
 
@@ -488,7 +490,6 @@ nav {
     text-align: center;
     font-size: 7vw;
     z-index: 10;
-
 }
 
 #section-3 h2 span {
@@ -781,5 +782,31 @@ nav {
 
 /* ----section -8 */
 #section-8 {
-    background-color: #B48D62;
+    position: relative;
+    width: 100vw;
+    padding-top: 0;
+    /* background-color: #B48D62;/ */
+}
+
+#section-8 .sticky-canvas {
+    height: 100vh;
+}
+
+#section-8 .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    text-align: center;
+    font-size: 7.5vw;
+    color: white;
+}
+
+#section-8 .text-container.fixed {
+    position: fixed;
+}
+
+#section-9 {
+    background-color: aquamarine;
 }

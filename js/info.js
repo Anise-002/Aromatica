@@ -264,17 +264,30 @@ const scenInfo = [
     {
         //8
         type: STICKY,
-        heightNum: 2,
+        heightNum: 5,
         scrollHeight: 0,
+        imageCount: 4,
         obj: {
             container: document.querySelector('#section-8'),
+            textContainer : document.querySelector('#section-8 .text-container'),
+            canvasContainer : document.querySelector('#section-8 .sticky-canvas'),
+            backgroundCanvas : document.querySelector('#background-3'),
+            canvas: document.querySelector('#video-canvas-3'),
+            backgroundContext : document.querySelector('#background-3').getContext('2d'),
+            context: document.querySelector("#video-canvas-3").getContext('2d'),
+            canvasImgpath: ["../img/11.jpg", "../img/12.jpg","../img/13.jpg","../img/14.jpg"],
+            imgs: [],
 
         },
+        value : {
+            canvasblendImage: [0, 0, { start: 0, end: 0}],
+            textContainer_Y : [120, 0, {start : 0, end : 0}],
+        }
     },
     {
         //9
-        type: NORMAL,
-        heightNum: 2,
+        type: STICKY,
+        heightNum: 5,
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-9'),

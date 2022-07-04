@@ -25,6 +25,11 @@ function setCanvasImage() {
         imgElem.src = `../video/2/${i}.jpg`;
         scenInfo[6].obj.videoImg.push(imgElem);
     }
+    for(let i = 0; i < scenInfo[8].imageCount; i++){
+        imgElem = new Image();
+        imgElem.src = scenInfo[8].obj.canvasImgpath[i];
+        scenInfo[8].obj.imgs.push(imgElem);
+    }
 }
 
 
@@ -84,30 +89,38 @@ function setLayout() {
     //canvas size 
     const heightRatio = window.innerHeight / 1080;
     const widthRatio = window.innerWidth/1920;
+    const useHeightRatio = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+    const useWidthRatio =  `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
 
     if(window.innerWidth == 1280 && window.innerHeight == 800){
         //Nest Hub Max 디바이스 대응 조건문
-        scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[3].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[6].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+        scenInfo[0].obj.canvas.style.transform = useHeightRatio;
+        scenInfo[3].obj.canvas.style.transform = useHeightRatio;
+        scenInfo[3].obj.backgroundCanvas.style.transform = useHeightRatio;
+        scenInfo[6].obj.canvas.style.transform =useHeightRatio;
+        scenInfo[6].obj.backgroundCanvas.style.transform =useHeightRatio;
+        scenInfo[8].obj.canvas.style.transform = useHeightRatio;
+        scenInfo[8].obj.backgroundCanvas.style.transform = useHeightRatio;
     }else if(window.innerWidth > window.innerHeight){
         //가로가 넓은 디바이스 대응
-        scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
-        scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
-        scenInfo[3].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
-        scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
-        scenInfo[6].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${widthRatio})`;
-    }else {
+        scenInfo[0].obj.canvas.style.transform = useWidthRatio;
+        scenInfo[3].obj.canvas.style.transform = useWidthRatio;
+        scenInfo[3].obj.backgroundCanvas.style.transform =useWidthRatio;
+        scenInfo[6].obj.canvas.style.transform = useWidthRatio;
+        scenInfo[6].obj.backgroundCanvas.style.transform = useWidthRatio;
+        scenInfo[8].obj.canvas.style.transform = useWidthRatio;
+        scenInfo[8].obj.backgroundCanvas.style.transform = useWidthRatio;
+    }else if(window.innerWidth < window.innerHeight){
         //세로가 넓은 디바이스 대응
-        scenInfo[0].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[3].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[3].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[6].obj.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-        scenInfo[6].obj.backgroundCanvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
-
+        scenInfo[0].obj.canvas.style.transform = useHeightRatio;
+        scenInfo[3].obj.canvas.style.transform = useHeightRatio;
+        scenInfo[3].obj.backgroundCanvas.style.transform = useHeightRatio
+        scenInfo[6].obj.canvas.style.transform = useHeightRatio;
+        scenInfo[6].obj.backgroundCanvas.style.transform = useHeightRatio;
+        scenInfo[8].obj.canvas.style.transform = useHeightRatio;
+        scenInfo[8].obj.backgroundCanvas.style.transform = useHeightRatio;
     }
+    //css 클래스를 이용해 html태그에 추가 후 전체적으로 적용시키는 방법을 시도해 봐도 좋을 것 같다.
 }
 
 setCanvasImage();
