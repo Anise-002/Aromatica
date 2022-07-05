@@ -378,61 +378,52 @@ function playAnimation() {
             obj.messageC.style.transform = `translate3d(0,${calcValue(value.messageC_translateY, currentYOffset)}%,0)`;
             
             //scenInfo[8]의 image 랜더링
-            if(window.innerWidth > 1024){
-                scenInfo[8].obj.backgroundContext.drawImage(scenInfo[8].obj.imgs[0], 0, 0,scenInfo[8].obj.imgs[0].width, scenInfo[8].obj.imgs[0].height,
-                    0, 0, scenInfo[8].obj.canvas.width/2,  scenInfo[8].obj.canvas.height/2);
-                scenInfo[8].obj.backgroundContext.drawImage(scenInfo[8].obj.imgs[1], 0, 0,scenInfo[8].obj.imgs[1].width, scenInfo[8].obj.imgs[1].height,
-                0,  scenInfo[8].obj.canvas.height/2, scenInfo[8].obj.canvas.width/2,  scenInfo[8].obj.canvas.height/2);
-                scenInfo[8].obj.backgroundContext.drawImage(scenInfo[8].obj.imgs[2], 0, 0 ,scenInfo[8].obj.imgs[2].width, scenInfo[8].obj.imgs[2].height,
-                    scenInfo[8].obj.canvas.width/2,  0, scenInfo[8].obj.canvas.width/2, scenInfo[8].obj.canvas.height);
-            }else{
-                scenInfo[8].obj.backgroundContext.drawImage(scenInfo[8].obj.imgs[0], 0, 0,scenInfo[8].obj.imgs[0].width, scenInfo[8].obj.imgs[0].height,
-                    0, 0, scenInfo[8].obj.canvas.width,  scenInfo[8].obj.canvas.height);
-            }
-            break;
-
-            case 8 :
+            function sceinfor8CanvasDraw(drawObj){
                 if(window.innerWidth > 1024){
-                    scenInfo[8].obj.context.drawImage(scenInfo[8].obj.imgs[0],
-                        0, 0,scenInfo[8].obj.imgs[0].width, scenInfo[8].obj.imgs[0].height,
+                    drawObj.drawImage(scenInfo[8].obj.imgs[0], 0, 0,scenInfo[8].obj.imgs[0].width, scenInfo[8].obj.imgs[0].height,
                         0, 0, scenInfo[8].obj.canvas.width/2,  scenInfo[8].obj.canvas.height/2);
-                    scenInfo[8].obj.context.drawImage(scenInfo[8].obj.imgs[1],
-                        0, 0,scenInfo[8].obj.imgs[1].width, scenInfo[8].obj.imgs[1].height,
-                        0,scenInfo[8].obj.canvas.height/2, scenInfo[8].obj.canvas.width/2,  scenInfo[8].obj.canvas.height/2);
-                    scenInfo[8].obj.context.drawImage(scenInfo[8].obj.imgs[2],
-                        0, 0 ,scenInfo[8].obj.imgs[2].width, scenInfo[8].obj.imgs[2].height,
+                    drawObj.drawImage(scenInfo[8].obj.imgs[1], 0, 0,scenInfo[8].obj.imgs[1].width, scenInfo[8].obj.imgs[1].height,
+                    0,  scenInfo[8].obj.canvas.height/2, scenInfo[8].obj.canvas.width/2,  scenInfo[8].obj.canvas.height/2);
+                    drawObj.drawImage(scenInfo[8].obj.imgs[2], 0, 0 ,scenInfo[8].obj.imgs[2].width, scenInfo[8].obj.imgs[2].height,
                         scenInfo[8].obj.canvas.width/2,  0, scenInfo[8].obj.canvas.width/2, scenInfo[8].obj.canvas.height);
                 }else{
-                    scenInfo[8].obj.context.drawImage(scenInfo[8].obj.imgs[0],
-                        0, 0,scenInfo[8].obj.imgs[0].width, scenInfo[8].obj.imgs[0].height,
+                    drawObj.drawImage(scenInfo[8].obj.imgs[0], 0, 0,scenInfo[8].obj.imgs[0].width, scenInfo[8].obj.imgs[0].height,
                         0, 0, scenInfo[8].obj.canvas.width,  scenInfo[8].obj.canvas.height);
                 }
+            };
+            
+            sceinfor8CanvasDraw(scenInfo[8].obj.backgroundContext);
+        break;
 
-                //이미지 블랜딩
-                value.canvasblendImage[0] = obj.canvas.height;
-                value.canvasblendImage[2].end = 0.5;
-                const blendHeight_8 = calcValue(value.canvasblendImage,currentYOffset);
-                obj.context.drawImage(obj.imgs[obj.imgs.length-1],
-                    0, blendHeight_8 , obj.imgs[obj.imgs.length-1].width,  obj.imgs[obj.imgs.length-1].height - blendHeight_8,
-                    0, blendHeight_8, obj.canvas.width, obj.imgs[obj.imgs.length-1].height - blendHeight_8 );
-                
-                //text  블랜딩
-                value.textContainer_Y[2].start = value.canvasblendImage[2].end /2;
-                value.textContainer_Y[2].end = value.canvasblendImage[2].end;
-                value.textContainer_opacity[2].start = value.textContainer_Y[2].start;
-                value.textContainer_opacity[2].end = value.textContainer_Y[2].end;
-                obj.textContainer.style.marginTop = `${calcValue(value.textContainer_Y, currentYOffset)}%`;
-                obj.textContainer.style.opacity = calcValue(value.textContainer_opacity,currentYOffset);
-                console.log(scrollRatio);
-                //블랜딩 완료 후
-                if(scrollRatio >= 0.8){
-                    obj.canvasContainer.style.position = 'absolute';
-                    obj.canvasContainer.style.top = `${0.8 * scrollHeight}px`;
-                }else{
-                    obj.canvasContainer.style.position = 'fixed';
-                    obj.canvasContainer.style.top = 0;
-                }
-                
-            break;
+        case 8 :
+            sceinfor8CanvasDraw(scenInfo[8].obj.context);
+
+
+            //이미지 블랜딩
+            value.canvasblendImage[0] = obj.canvas.height;
+            value.canvasblendImage[2].end = 0.5;
+            const blendHeight_8 = calcValue(value.canvasblendImage,currentYOffset);
+            obj.context.drawImage(obj.imgs[obj.imgs.length-1],
+                0, blendHeight_8 , obj.imgs[obj.imgs.length-1].width,  obj.imgs[obj.imgs.length-1].height - blendHeight_8,
+                0, blendHeight_8, obj.canvas.width, obj.imgs[obj.imgs.length-1].height - blendHeight_8 );
+            
+            //text  블랜딩
+            value.textContainer_Y[2].start = value.canvasblendImage[2].end /2;
+            value.textContainer_Y[2].end = value.canvasblendImage[2].end;
+            value.textContainer_opacity[2].start = value.textContainer_Y[2].start;
+            value.textContainer_opacity[2].end = value.textContainer_Y[2].end;
+            obj.textContainer.style.marginTop = `${calcValue(value.textContainer_Y, currentYOffset)}%`;
+            obj.textContainer.style.opacity = calcValue(value.textContainer_opacity,currentYOffset);
+            console.log(scrollRatio);
+            //블랜딩 완료 후
+            if(scrollRatio >= 0.8){
+                obj.canvasContainer.style.position = 'absolute';
+                obj.canvasContainer.style.top = `${0.8 * scrollHeight}px`;
+            }else{
+                obj.canvasContainer.style.position = 'fixed';
+                obj.canvasContainer.style.top = 0;
+            }
+            
+        break;
     }
 }
