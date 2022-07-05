@@ -316,7 +316,6 @@ function playAnimation() {
            
         break;
         case 7 :
-            console.log(scrollRatio)
             if(scrollRatio >= 0){
                 scenInfo[6].obj.container.style.opacity = 0;
             }
@@ -324,9 +323,9 @@ function playAnimation() {
             scenInfo[6].obj.context.drawImage(scenInfo[6].obj.videoImg[scenInfo[6].obj.videoImg.length-1], 0, 0);
             
             //conContainer fixed
-                obj.conContainer.classList.add(FIXED);
-                obj.conContainer.style.top = 0;
-                obj.conContainer.style.opacity = 1;
+            obj.conContainer.classList.add(FIXED);
+            obj.conContainer.style.top = 0;
+            obj.conContainer.style.opacity = 1;
 
             //svg effect
             obj.svgPath.style.strokeDashoffset = calcValue(value.svgObjcet_draw, currentYOffset);
@@ -424,6 +423,26 @@ function playAnimation() {
                 obj.canvasContainer.style.top = 0;
             }
             
+            if(scrollRatio > 0.9999){
+                // scenInfo[9].obj.conContainer.style.position = 'fixed';
+                scenInfo[9].obj.conContainer.classList.add(FIXED);
+            }else{
+                // scenInfo[9].obj.conContainer.style.position = 'absolute';
+                scenInfo[9].obj.conContainer.classList.remove(FIXED);
+            }
+        break;
+
+        case 9 : 
+            value.svgObjcet_draw[2].end = 0.8;
+            obj.svgPath.style.strokeDashoffset = calcValue(value.svgObjcet_draw, currentYOffset);
+
+            if(scrollRatio >= value.svgObjcet_draw[2].end){
+                scenInfo[9].obj.conContainer.classList.remove(FIXED);
+                obj.conContainer.style.top = `${value.svgObjcet_draw[2].end * scrollHeight}px`;
+            }else{
+                scenInfo[9].obj.conContainer.classList.add(FIXED);
+                obj.conContainer.style.top = 0;
+            }
         break;
     }
 }

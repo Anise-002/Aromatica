@@ -292,6 +292,14 @@ const scenInfo = [
         scrollHeight: 0,
         obj: {
             container: document.querySelector('#section-9'),
+            conContainer : document.querySelector('#section-9 .con-container'),
+            svgPath : document.querySelector('#section-9 .svg-container svg path'),
+            title : document.querySelector('#section-9 .content-wrap h2'),
+            text : document.querySelector('#section-9 .content-wrap p'),
+            image : document.querySelector('#section-9 .content-wrap .imgs-wrap'),
         },
+        value : {
+            svgObjcet_draw : [4412, 0, {start : 0, end : 0}],
+        }
     }
 ];
