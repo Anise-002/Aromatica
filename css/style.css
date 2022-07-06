@@ -918,6 +918,44 @@ nav {
 /* fotter */
 footer {
     width: 100vw;
-    height: 30vh;
-    background-color: aquamarine;
+}
+
+.hide {
+    display: none;
+}
+
+.footer-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 3vh 0 10vh;
+}
+
+footer .right-footer {
+    border-top: 1px solid rgb(146, 146, 146);
+}
+
+footer .right-footer img {
+    width: 50%;
+}
+
+footer .left-footer {
+    padding: 3vh 3vw;
+}
+
+.fotter-larg-text {
+    font-size: 4vw;
+}
+
+.point-txt {
+    font-size: 5vw;
+}
+
+.first-depth>li {
+    padding-bottom: 3vh;
+}
+
+.first-depth>li:first-child>ul {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 13px;
 }

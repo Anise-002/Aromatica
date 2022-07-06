@@ -310,6 +310,53 @@
         width: 65%;
     }
 
+    /* footer */
+    .hide {
+        display: block;
+    }
+
+    .footer-container {
+        padding: 3vh 0 3vh;
+    }
+
+    footer .left-footer .first-depth {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .left-footer .first-depth>li:not(:last-child) {
+        margin-right: 2vw;
+    }
+
+    footer .left-footer .first-depth>li:first-child {
+        margin-right: 7vw;
+    }
+
+    footer .left-footer .first-depth p {
+        margin-bottom: 1vh;
+    }
+
+    .second-depth li {
+        padding-bottom: 3px;
+    }
+
+    .fotter-larg-text {
+        font-size: 2.5vw;
+    }
+
+    .point-txt {
+        font-size: 5vw;
+        color: #112B23;
+    }
+
+    .tell {
+        font-size: 3vw;
+    }
+
+    .info {
+        padding-top: 3vh;
+        /* padding-bottom: 5vh; */
+    }
 
 }
 
@@ -724,6 +771,79 @@
 
     #section-9 .content-container .imgs-wrap .pet-img {
         width: 25%;
+    }
+
+    /* footer */
+    .hide {
+        display: block;
+    }
+
+    .footer-container {
+        display: flex;
+        max-width: 1440px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding-top: 10vh;
+    }
+
+    footer .right-footer {
+        border-top: none;
+        width: 25%;
+    }
+
+    footer .left-footer {
+        width: 75%;
+        padding: 0 0 0 7vw;
+        border-left: 1px solid rgb(146, 146, 146);
+    }
+
+    footer .first-depth {
+        display: flex;
+    }
+
+    footer .first-depth>li {
+        width: 18%;
+    }
+
+    footer .second-depth li {
+        margin-bottom: 5px;
+    }
+
+    footer .first-depth>li:first-child {
+        width: 25%;
+        margin-right: 20px;
+    }
+
+    footer .right-footer img {
+        width: 80%;
+    }
+
+    .fotter-larg-text {
+        font-size: 21px;
+        margin-bottom: 13px;
+    }
+
+    .point-txt {
+        font-size: 24px;
+    }
+
+    .info {
+        margin-top: 7vh;
+    }
+
+    .info p {
+        padding: 2px 0;
+    }
+
+    .tell {
+        font-size: 27px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+
     }
 }
 
