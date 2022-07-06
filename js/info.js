@@ -296,10 +296,18 @@ const scenInfo = [
             svgPath : document.querySelector('#section-9 .svg-container svg path'),
             title : document.querySelector('#section-9 .content-wrap h2'),
             text : document.querySelector('#section-9 .content-wrap p'),
-            image : document.querySelector('#section-9 .content-wrap .imgs-wrap'),
+            imageWrap : document.querySelector('#section-9 .content-wrap .imgs-wrap'),
+            image_1 : document.querySelector('#section-9 .imgs-wrap .circle-img'),
+            image_2 : document.querySelector('#section-9  .imgs-wrap .pet-img'),
         },
         value : {
             svgObjcet_draw : [4412, 0, {start : 0, end : 0}],
+            title_opacity : [0, 1,{start : 0.2, end : 0.3}],
+            title_translateY : [100, 0,{start : 0.2, end : 0.3}],
+            text_opacity : [0, 1,{start : 0.35, end : 0.45}],
+            text_translateY : [100, 0,{start : 0.35, end : 0.45}],
+            image_opacity : [0, 1,{start : 0.6, end : 0.7}],
+            image_translateY : [50, 0,{start : 0.6, end : 0.7}],
         }
     }
 ];

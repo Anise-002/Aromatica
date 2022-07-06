@@ -413,7 +413,7 @@ function playAnimation() {
             value.textContainer_opacity[2].end = value.textContainer_Y[2].end;
             obj.textContainer.style.marginTop = `${calcValue(value.textContainer_Y, currentYOffset)}%`;
             obj.textContainer.style.opacity = calcValue(value.textContainer_opacity,currentYOffset);
-            console.log(scrollRatio);
+
             //블랜딩 완료 후
             if(scrollRatio >= 0.8){
                 obj.canvasContainer.style.position = 'absolute';
@@ -424,10 +424,8 @@ function playAnimation() {
             }
             
             if(scrollRatio > 0.9999){
-                // scenInfo[9].obj.conContainer.style.position = 'fixed';
                 scenInfo[9].obj.conContainer.classList.add(FIXED);
             }else{
-                // scenInfo[9].obj.conContainer.style.position = 'absolute';
                 scenInfo[9].obj.conContainer.classList.remove(FIXED);
             }
         break;
@@ -435,7 +433,19 @@ function playAnimation() {
         case 9 : 
             value.svgObjcet_draw[2].end = 0.8;
             obj.svgPath.style.strokeDashoffset = calcValue(value.svgObjcet_draw, currentYOffset);
+            //title
+            obj.title.style.opacity = calcValue(value.title_opacity, currentYOffset);
+            obj.title.style.transform = `translate3d(0,${calcValue(value.title_translateY, currentYOffset)}%,0)`;
+            //text
+            obj.text.style.opacity = calcValue(value.text_opacity, currentYOffset);
+            obj.text.style.transform = `translate3d(0,${calcValue(value.text_translateY, currentYOffset)}%,0)`;
+            //image
+            obj.image_1.style.opacity = calcValue(value.image_opacity, currentYOffset);
+            obj.image_1.style.transform = `translate3d(0,${calcValue(value.image_translateY, currentYOffset)}%,0)`;
+            obj.image_2.style.opacity = calcValue(value.image_opacity, currentYOffset);
+            obj.image_2.style.marginTop = `${calcValue(value.image_translateY, currentYOffset)}%`;
 
+            //canvasContinaer 포지션 변경 조건
             if(scrollRatio >= value.svgObjcet_draw[2].end){
                 scenInfo[9].obj.conContainer.classList.remove(FIXED);
                 obj.conContainer.style.top = `${value.svgObjcet_draw[2].end * scrollHeight}px`;
