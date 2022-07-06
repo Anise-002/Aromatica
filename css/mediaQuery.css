@@ -338,24 +338,38 @@
 
     .second-depth li {
         padding-bottom: 3px;
+        font-size: 1vw;
     }
 
     .fotter-larg-text {
-        font-size: 2.5vw;
+        font-size: 2vw;
     }
 
     .point-txt {
-        font-size: 5vw;
+        font-size: 3vw;
         color: #112B23;
     }
 
     .tell {
-        font-size: 3vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
     .info {
-        padding-top: 3vh;
-        /* padding-bottom: 5vh; */
+        font-size: 1vw;
+    }
+
+    .info p {
+        padding-bottom: 2px;
+    }
+
+    .info>p {
+        font-size: 1.5vw;
+    }
+
+    footer .right-footer img {
+        width: 25%;
     }
 
 }

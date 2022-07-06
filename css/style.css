@@ -927,7 +927,7 @@ footer {
 .footer-container {
     width: 90%;
     margin: 0 auto;
-    padding: 3vh 0 10vh;
+    padding: 3vh 0 5vh;
 }
 
 footer .right-footer {
@@ -935,7 +935,7 @@ footer .right-footer {
 }
 
 footer .right-footer img {
-    width: 50%;
+    width: 40%;
 }
 
 footer .left-footer {
@@ -948,6 +948,12 @@ footer .left-footer {
 
 .point-txt {
     font-size: 5vw;
+}
+
+.tell {
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .first-depth>li {
