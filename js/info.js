@@ -306,8 +306,10 @@ const scenInfo = [
             title_translateY : [100, 0,{start : 0.2, end : 0.3}],
             text_opacity : [0, 1,{start : 0.35, end : 0.45}],
             text_translateY : [100, 0,{start : 0.35, end : 0.45}],
-            image_opacity : [0, 1,{start : 0.6, end : 0.7}],
-            image_translateY : [50, 0,{start : 0.6, end : 0.7}],
+            image_1_opacity : [0, 1,{start : 0.6, end : 0.7}],
+            image_1_translateY : [50, 0,{start : 0.6, end : 0.7}],
+            image_2_opacity : [0, 1,{start : 0.7, end : 0.8}],
+            image_2_translateY : [20, 0,{start : 0.7, end : 0.8}],
         }
     }
 ];

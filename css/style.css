@@ -879,6 +879,7 @@ nav {
     font-size: 12vw;
     color: white;
     text-align: center;
+    opacity: 0;
 }
 
 #section-9 .content-container .content-wrap p {
@@ -886,27 +887,32 @@ nav {
     width: 75%;
     margin: 5vh auto 0;
     text-align: center;
+    opacity: 0;
 }
 
 #section-9 .content-container .imgs-wrap {
+    position: relative;
     display: flex;
     justify-content: center;
     width: 75%;
     margin-top: 7vh;
 }
 
-#section-9 .content-container .imgs-wrap img:nth-child(1) {
+#section-9 .content-container .imgs-wrap .circle-img {
     position: absolute;
     display: block;
-    width: 60%;
+    width: 70%;
     animation: circleAnimation 20s infinite linear reverse;
+    opacity: 0;
 }
 
-#section-9 .content-container .imgs-wrap img:nth-child(2) {
+#section-9 .content-container .imgs-wrap .pet-img {
     position: absolute;
+    top: 0;
     display: block;
-    width: 65%;
+    width: 75%;
     animation: circleAnimation 20s infinite linear;
+    opacity: 0;
 }
 
 /* fotter */

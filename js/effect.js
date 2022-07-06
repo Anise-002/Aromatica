@@ -440,10 +440,10 @@ function playAnimation() {
             obj.text.style.opacity = calcValue(value.text_opacity, currentYOffset);
             obj.text.style.transform = `translate3d(0,${calcValue(value.text_translateY, currentYOffset)}%,0)`;
             //image
-            obj.image_1.style.opacity = calcValue(value.image_opacity, currentYOffset);
-            obj.image_1.style.transform = `translate3d(0,${calcValue(value.image_translateY, currentYOffset)}%,0)`;
-            obj.image_2.style.opacity = calcValue(value.image_opacity, currentYOffset);
-            obj.image_2.style.marginTop = `${calcValue(value.image_translateY, currentYOffset)}%`;
+            obj.image_1.style.opacity = calcValue(value.image_1_opacity, currentYOffset);
+            obj.image_1.style.transform = `translate3d(0,${calcValue(value.image_1_translateY, currentYOffset)}%,0)`;
+            obj.image_2.style.opacity = calcValue(value.image_2_opacity, currentYOffset);
+            obj.image_2.style.marginTop = `${calcValue(value.image_2_translateY, currentYOffset)}%`;
 
             //canvasContinaer 포지션 변경 조건
             if(scrollRatio >= value.svgObjcet_draw[2].end){
