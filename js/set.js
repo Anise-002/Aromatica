@@ -123,6 +123,17 @@ function setLayout() {
     //css 클래스를 이용해 html태그에 추가 후 전체적으로 적용시키는 방법을 시도해 봐도 좋을 것 같다.
 }
 
+function fixedNav(){
+    if(window.scrollY > 50){
+        document.querySelector('#bottom-nav').classList.add('fixed');
+    }else{
+        document.querySelector('#bottom-nav').classList.remove('fixed');
+    }
+};
+
+
+
+
 setCanvasImage();
 window.addEventListener('load', () => {
     setLayout();
@@ -133,8 +144,10 @@ window.addEventListener('resize', () => {
     playAnimation();
 });
 window.addEventListener('scroll', () => {
+    fixedNav();
     YOffset = window.pageYOffset;
     playAnimation();
     setCurrentNum();
+    
 
 })

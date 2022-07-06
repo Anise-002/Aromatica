@@ -22,8 +22,9 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #F3F0EB;
+    background: #f3f0ebb0;
     z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
 #top-nav {
@@ -38,6 +39,11 @@ nav {
 
 #bottom-nav {
     top: 50px;
+}
+
+#bottom-nav.fixed {
+    position: fixed;
+    top: 0;
 }
 
 #bottom-nav ul {
