@@ -124,15 +124,25 @@ function setLayout() {
 }
 
 function fixedNav(){
-    if(window.scrollY > 50){
+    if(window.pageYOffset > 50){
         document.querySelector('#bottom-nav').classList.add('fixed');
     }else{
         document.querySelector('#bottom-nav').classList.remove('fixed');
     }
 };
 
-
-
+function sideNavShow(){
+    const menuButton = document.querySelectorAll('.menu-button');
+    const sideMenu = document.querySelector('#side-nav');
+    
+    menuButton[0].addEventListener('click', ()=>{
+        sideMenu.classList.toggle('show');
+    });
+    menuButton[1].addEventListener('click', ()=>{
+        sideMenu.classList.toggle('show');
+    });
+}
+sideNavShow();
 
 setCanvasImage();
 window.addEventListener('load', () => {
@@ -144,10 +154,8 @@ window.addEventListener('resize', () => {
     playAnimation();
 });
 window.addEventListener('scroll', () => {
-    fixedNav();
     YOffset = window.pageYOffset;
+    fixedNav();
     playAnimation();
     setCurrentNum();
-    
-
 })

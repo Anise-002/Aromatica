@@ -343,7 +343,6 @@ function playAnimation() {
             if(scrollRatio >= conContainerMoveStart){
                 obj.conContainer.classList.remove(FIXED);
                 obj.conContainer.style.marginTop = `${(moveStartPoint)* scrollHeight}px`;
-            console.log(conContainerMoveStart);
             }else{
                 obj.conContainer.style.marginTop = 0;
             }

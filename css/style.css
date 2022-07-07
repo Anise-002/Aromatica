@@ -54,7 +54,7 @@ nav {
     height: 70px;
 }
 
-#bottom-nav .menu-button {
+.menu-button {
     width: 25px;
     height: 50%;
     display: flex;
@@ -63,7 +63,7 @@ nav {
     cursor: pointer;
 }
 
-#bottom-nav .menu-button span {
+.menu-button span {
     display: block;
     width: 100%;
     height: 1px;
@@ -95,6 +95,79 @@ nav {
 }
 
 #bottom-nav .menu-icon a img {
+    width: 100%;
+}
+
+#side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 60vw;
+    height: 100vh;
+    z-index: 100;
+    transition: 0.8s;
+}
+
+#side-nav nav {
+    width: 100%;
+    height: 100vh;
+}
+
+#side-nav .menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    z-index: 101;
+}
+
+#side-nav .menu-button span {
+    transition: 0.5s;
+}
+
+#side-nav.show {
+    transform: translateX(0%);
+}
+
+#side-nav.show .menu-button {
+    justify-content: center;
+}
+
+#side-nav.show .menu-button span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+#side-nav.show .menu-button span:nth-child(2) {
+    opacity: 0;
+}
+
+#side-nav.show .menu-button span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#side-nav nav .menu a {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#side-nav nav .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: #F3F0EB;
+    transition: 0.5s;
+}
+
+#side-nav nav .menu a:hover::after {
     width: 100%;
 }
 
@@ -575,7 +648,7 @@ nav {
     width: 80%;
     font-size: 8px;
     border: 1px solid black;
-    padding: 1vh 3vw;
+    padding: 1vh 1vw;
     margin-top: 2vh;
     transition: 0.5s;
 }
@@ -584,7 +657,6 @@ nav {
     background-color: black;
     color: aliceblue;
     border: 1px solid white;
-    padding: 1vw;
 }
 
 /* #section -5  */
@@ -610,6 +682,7 @@ nav {
     background-repeat: no-repeat;
     width: 50%;
     height: 35%;
+    overflow: hidden;
 }
 
 #section-5 .img-2 {
@@ -618,6 +691,7 @@ nav {
     background-repeat: no-repeat;
     width: 50%;
     height: 35%;
+    overflow: hidden;
 }
 
 #section-5 .img-3 {
@@ -627,6 +701,7 @@ nav {
     background-position: center;
     width: 100%;
     height: 65%;
+    overflow: hidden;
 }
 
 /* ------------- #section-6 */
