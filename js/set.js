@@ -10,7 +10,7 @@ function setCanvasImage() {
         imgElem = new Image();
         if (i < 10) i = `00${i}`;
         if (i >= 10 && i < 100) i = `0${i}`;
-        imgElem.src = `../video/1/${i}.jpg`;
+        imgElem.src = `./video/1/${i}.jpg`;
         scenInfo[0].obj.videoImg.push(imgElem);
     }
     for (let i = 0; i < scenInfo[3].imageCount; i++) {
@@ -22,7 +22,7 @@ function setCanvasImage() {
         imgElem = new Image();
         if (i < 10) i = `00${i}`;
         if (i >= 10 && i < 100) i = `0${i}`;
-        imgElem.src = `../video/2/${i}.jpg`;
+        imgElem.src = `./video/2/${i}.jpg`;
         scenInfo[6].obj.videoImg.push(imgElem);
     }
     for(let i = 0; i < scenInfo[8].imageCount; i++){

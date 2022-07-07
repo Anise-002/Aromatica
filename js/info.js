@@ -139,7 +139,7 @@ const scenInfo = [
             backgroundCanvas : document.querySelector('#background-1'),
             context: document.querySelector("#video-canvas-1").getContext('2d'),
             backgroundContext : document.querySelector('#background-1').getContext('2d'),
-            canvasImgpath: ["../img/2.jpg", "../img/3.jpg"],
+            canvasImgpath: ["./img/2.jpg", "./img/3.jpg"],
             imgs: [],
 
         },
@@ -275,7 +275,7 @@ const scenInfo = [
             canvas: document.querySelector('#video-canvas-3'),
             backgroundContext : document.querySelector('#background-3').getContext('2d'),
             context: document.querySelector("#video-canvas-3").getContext('2d'),
-            canvasImgpath: ["../img/11.jpg", "../img/12.jpg","../img/13.jpg","../img/14.jpg"],
+            canvasImgpath: ["./img/11.jpg", "./img/12.jpg","./img/13.jpg","./img/14.jpg"],
             imgs: [],
 
         },
