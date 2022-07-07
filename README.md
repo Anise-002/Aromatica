@@ -8,22 +8,9 @@
 ## [✨ Project Demo](https://anise-002.github.io/Aromatica/)
 
 ## Project Preview 
-<style>
-    .img-flex{
-        width : 100%;
-        display : flex;
-    }
-    .pc{
-        width: 75%;
-        margin-right : 5%;
-    }
-    .mobile{
-        width:20%;
-    }
-</style>
 <div class='img-flex'>
-    <img class='pc' src='./img/site-preview.gif' alt='pc버전 미리보기'>
-    <img class='mobile' src='./img/site-preview-mobile.gif' alt='mobile버전 미리보기'>
+    <img class='pc' src='./img/site-preview.gif' width='70%'>
+    <img class='mobile' src='./img/site-preview-mobile.gif' width = '20%'>
 </div>
 
 <br>
