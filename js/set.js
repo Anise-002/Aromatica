@@ -142,12 +142,14 @@ function sideNavShow(){
         sideMenu.classList.toggle('show');
     });
 }
-sideNavShow();
 
+sideNavShow();
 setCanvasImage();
+
 window.addEventListener('load', () => {
-    setLayout();
     scenInfo[0].obj.context.drawImage(scenInfo[0].obj.videoImg[0], 0, 0);
+    setLayout();
+    document.body.classList.remove("before-loading");
 });
 window.addEventListener('resize', () => {
     setLayout();
@@ -158,4 +160,7 @@ window.addEventListener('scroll', () => {
     fixedNav();
     playAnimation();
     setCurrentNum();
+})
+document.querySelector('#loading').addEventListener('transitionend',(e)=>{
+    document.body.removeChild(e.currentTarget);
 })
